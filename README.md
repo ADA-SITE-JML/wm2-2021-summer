@@ -1,1 +1,1 @@
-# wm2-2021-summer
+Welcome to the Web & Mobile 2 in Summer Semester!
