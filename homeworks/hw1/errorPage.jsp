@@ -54,7 +54,7 @@
 		<br>
 		<br>
 		<div class="l-div">
-			<a href="/fagan-hw1/index.jsp" class="my-link">< Back to Home Page</a>
+			<a href="/hw1/index.jsp" class="my-link">< Back to Home Page</a>
 		</div>
 	</div>
 </body>
