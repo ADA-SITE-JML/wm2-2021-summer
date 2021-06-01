@@ -68,7 +68,7 @@
 
 <div class="main">
     <h2>Seach Course</h2>
-    <form action="/hw1/index.jsp" method="GET">
+    <form action="/fagan-hw1/index.jsp" method="GET">
         <input class="input-search" autocomplete="off" type="search" name="q">
         <button class="btn-search">Search</button>
     </form>
