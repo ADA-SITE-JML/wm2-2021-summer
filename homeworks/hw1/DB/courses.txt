@@ -1,0 +1,10 @@
+1;Web mobile 2;Major;Camaladdin Hasanov
+2;Writing;General;Aygun Huseynli
+3;Programming 1;Major;Emil Abbasov
+4;Linear Algebra;Major;Vuqar Musayev
+5;Discrete;Major;Fuad Hajiyev
+6;Data & Structure;Major;Medvediyev
+7;Intro to Networking;Major;Emil Abbasov;
+8;IT Project Management;Major;Camaladdin Hasanov
+9;History;Gened;Orxan Iskenderli
+10;Civilization;Gened;Ceyhun Rzayev
