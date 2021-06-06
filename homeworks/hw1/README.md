@@ -12,4 +12,5 @@
 
 #### Requirements
 * I have added bootstrap css link which will require internet.
-* Please change file name in the index.jsp folder, for your file location.
+* Please, change file name in the index.jsp folder, for your file location.
+* Please, use hw1 as a app name. I have used /hw1/ as a action in form get request.
