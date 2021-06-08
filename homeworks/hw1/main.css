@@ -1,16 +1,24 @@
 body{
  font-family: 'Lato', sans-serif;
- background-color: #EDFFED;
+ background-color: #0d0d11;
 display: flex;
 justify-content: center;
 flex-direction: column;
 }
 
 h1{
- color: #000639;
+ color: #ffffff;
  font-weight: 300;
  font-size: 40px;
  line-height: 10px;
+}
+
+h4{
+ color: #ffffff;
+ font-weight: 500;
+ font-size: 15px;
+ line-height: 10px;
+ text-decoration: underline;
 }
 
 h5{
@@ -19,19 +27,20 @@ h5{
  font-weight: 400;
 }
 
-#image-container{
- background-color: white;
+.image-container{
+ background-color: #222229;
  border-radius: 20%;
  width: 200px;
  height: 200px;
  align-items: center;
  display: flex;
  justify-content: center;
+ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 img{
 
- height: 150px;
+ height: 120px;
 
 }
 
@@ -42,4 +51,50 @@ img{
  align-items: center;
  justify-content: center;
  margin: 0 auto;
+}
+
+#result{
+ color: #99de9f;
+ font-weight: 800;
+ font-size: 30px;
+ margin: 10px 0 20px 0;
+}
+
+#choices{
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 30px;
+}
+
+.choice{
+ margin: 30px;
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+#user-tech-info{
+ color: #F7B955;
+ font-size: 12px;
+ font-weight: 400;
+}
+
+#game-rules{
+ color: #F7B955;
+ line-height: 40px;
+ font-weight: 400;
+ text-decoration: underline;
+}
+
+span{
+ font-weight: 900;
+ color: #99de9f;
+}
+
+#error{
+ color: #ffffff;
+ font-weight: 500;
+ font-size: 15px;
+ line-height: 20px;
 }

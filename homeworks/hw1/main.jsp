@@ -22,24 +22,53 @@
 	int randomNumber=r.nextInt(images.length);
 	String techInfo=	request.getHeader("User-Agent");
 	%>
+	<div id="choices">
 
+		<div class="choice">
+	<h4>Opponent's choice:</h4>
 
-		<div id="image-container">
+		<div class="image-container">
 			<img src="<%=images[randomNumber]%>">
 		</div>
+</div>
 
-	
 
-
-	
-		<h1>Your Choice was: 
+<div class="choice">
+		<h4>Your Choice: </h4>
 
 		<%
 			String myChoice = request.getParameter("choice");
-			out.print(myChoice);
+		switch(myChoice){
+			case "rock":
 			%>
-		</h1>
-		<div>	
+			<div class="image-container">
+		<img src="<%=images[0]%>">
+	</div>
+	<%
+	break;
+	case "paper":
+	%>
+	<div class="image-container">
+<img src="<%=images[1]%>">
+</div>
+<%
+break;
+case "scissors":
+%>
+<div class="image-container">
+<img src="<%=images[2]%>">
+</div>
+<%
+break;
+		}
+
+			%>
+</div>
+
+	</div>
+
+
+		<div id="result">	
 			<%
 			switch(myChoice) {
 			case "rock":
