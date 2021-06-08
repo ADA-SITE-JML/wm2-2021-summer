@@ -1,4 +1,3 @@
-
 <%@ page errorPage="errorPage.jsp" %>
 <%@ page import="java.util.*"%>
 <!DOCTYPE html>
@@ -13,7 +12,7 @@
 	<title>HW #1 </title>
 </head>
 <body>
-
+<section id="main">
 	<h1>Rock Paper Scissors Game</h1>
 	<h5>Khanim Huseynzada | WM 2 | HW #1 </h5>
 	
@@ -37,7 +36,7 @@
 			out.print(myChoice);
 		%>
 	</h1>
-	
+</section>
 </body>
 </html>
 
