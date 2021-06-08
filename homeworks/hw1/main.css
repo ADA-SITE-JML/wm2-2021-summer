@@ -1,0 +1,28 @@
+body{
+ font-family: 'Lato', sans-serif;
+ background-color: #422343;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+h1{
+ color: #F5F1FF;
+ font-weight: 800;
+}
+
+#image-container{
+
+ border-radius: 50%;
+ width: 200px;
+ height: 200px;
+ align-items: center;
+ display: flex;
+ justify-content: center;
+}
+
+img{
+
+ height: 100px;
+
+}
