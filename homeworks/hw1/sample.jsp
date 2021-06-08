@@ -47,7 +47,7 @@
 
 
 	if(SecondString.contains(FirstString)){
-	out.print("<br>" + "<b> Result: </b>An Input String  \"" + FirstString + "\" Contains a Specified Substring  \"" + SecondString + "\"");
+	out.print("<br>" + "<b> Result: </b>An Input String  \"" + SecondString + "\" Contains a Specified Substring  \"" + FirstString + "\"");
 	}
 	else{
 	out.print("<br>" + "<b> Result: </b>An Input String \" " + SecondString + " \" Does not Contain a Specified Substring \"" + FirstString + "\"");
