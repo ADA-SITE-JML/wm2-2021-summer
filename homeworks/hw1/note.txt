@@ -1,0 +1,1 @@
+send get request like this: index.jsp?year=2013. Valid options are 2013-2019
