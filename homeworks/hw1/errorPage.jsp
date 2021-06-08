@@ -6,5 +6,8 @@
 
 	The problem: ${pageContext.exception}
 
+	<div id="game-rules">
+		Enter <span>Rock/Paper/Scissors</span> as a request parameter and wait for the opponent's reponse
+	</div>
 </BODY>
 </HTML>

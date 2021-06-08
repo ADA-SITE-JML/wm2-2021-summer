@@ -20,22 +20,81 @@
 	String [] images = {"./images/rock.png", "./images/paper.png", "./images/scissors.png"};
 	Random r=new Random();        
 	int randomNumber=r.nextInt(images.length);
-	for(int i =0; i<images.length; i++){
-		if(i==randomNumber){	%>
+	String techInfo=	request.getHeader("User-Agent");
+	%>
+
+
 		<div id="image-container">
-			<img src="<%=images[i]%>">
+			<img src="<%=images[randomNumber]%>">
 		</div>
 
 	
-	<%}}%>
+
+
 	
-		<h1>Your Choice was:
+		<h1>Your Choice was: 
 
 		<%
 			String myChoice = request.getParameter("choice");
 			out.print(myChoice);
+			%>
+		</h1>
+		<div>	
+			<%
+			switch(myChoice) {
+			case "rock":
+				switch(randomNumber){
+					case 0:
+					out.println("TIE");
+					break;
+					case 1:
+					out.println("You Lose!");
+					break;
+					case 2:
+					out.println("You Win!");
+					break;
+				}
+				break;
+				case "paper":
+				switch(randomNumber){
+					case 0:
+					out.println("You Win!");
+					break;
+					case 1:
+					out.println("TIE");
+					break;
+					case 2:
+					out.println("You Lose!");
+					break;
+				}
+				break;
+				case "scissors":
+				switch(randomNumber){
+					case 0:
+					out.println("You Lose!");
+					break;
+					case 1:
+					out.println("You Win!");
+					break;
+					case 2:
+					out.println("TIE");
+					break;
+				}
+					break;
+			default: throw new ServletException("Incorrect Input as a Choice");
+					// code block
+	}
+	%></div>
+		
+
+	
+	<div id="user-tech-info">
+		
+		<% 
+out.print(techInfo);
 		%>
-	</h1>
+	</div>
+
 </section>
 </body>
 </html>
