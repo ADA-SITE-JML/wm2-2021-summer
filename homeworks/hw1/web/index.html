@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>WEB2 Assignment1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .calculator {
+                background-color: #950952;
+                display: flex;
+                margin: auto;
+            }
+            
+            .calcdiv {
+                margin: auto;
+                border: 2px solid #020202;
+                background-color: #5E0035 !important;
+                color: white;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="calcdiv">
+                <h1>MULTIPLIER</h1>
+                <form action="./multiplier.jsp">
+                    <div class="inputbtn">
+                        <p>First number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n1"/>
+                    </div>
+                    <div class="inputbtn">
+                        <p>Second number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n2"/>
+                    </div>
+                    <input type="submit" value="multiple"/>
+                </form>
+            </div>
+            <div class="calcdiv">
+                <h1>DIVIDER</h1>
+                <form action="./divider.jsp">
+                    <div class="inputbtn">
+                        <p>First number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n1"/>
+                    </div>
+                    <div class="inputbtn">
+                        <p>Second number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n2"/>
+                    </div>
+                    <input type="submit" value="divide"/>
+                </form>
+            </div>
+            <div class="calcdiv">
+                <h1>SUM</h1>
+                <form action="./sum.jsp">
+                    <div class="inputbtn">
+                        <p>First number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n1"/>
+                    </div>
+                    <div class="inputbtn">
+                        <p>Second number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n2"/>
+                    </div>
+                    <input type="submit" value="sum"/>
+                </form>
+            </div>
+            <div class="calcdiv">
+                <h1>SUBTRACT</h1>
+                <form action="./subtract.jsp">
+                    <div class="inputbtn">
+                        <p>First number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n1"/>
+                    </div>
+                    <div class="inputbtn">
+                        <p>Second number</p>
+                        <input type='text' onkeyup="this.value=this.value.replace(/[^\d]/,'')" name="n2"/>
+                    </div>
+                    <input type="submit" value="subtract"/>
+                </form>
+            </div>    
+        </div>
+        
+        
+        <script>
+            function validate(evt) {
+            var theEvent = evt || window.event;
+
+            // Handle paste
+            if (theEvent.type === 'paste') {
+                key = event.clipboardData.getData('text/plain');
+            } else {
+            // Handle key press
+                var key = theEvent.keyCode || theEvent.which;
+                key = String.fromCharCode(key);
+            }
+            var regex = /[0-9]|\./;
+            if( !regex.test(key) ) {
+              theEvent.returnValue = false;
+              if(theEvent.preventDefault) theEvent.preventDefault();
+            }
+          }
+        </script>
+    </body>
+</html>
