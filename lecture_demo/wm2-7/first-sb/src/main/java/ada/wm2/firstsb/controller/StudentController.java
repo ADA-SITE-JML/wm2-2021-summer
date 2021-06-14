@@ -1,6 +1,7 @@
 package ada.wm2.firstsb.controller;
 
 import ada.wm2.firstsb.bean.StudentBean;
+import ada.wm2.firstsb.entity.Student;
 import ada.wm2.firstsb.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,7 @@ public class StudentController {
 
     @GetMapping("/list")
     public String getStudentList(Model model) {
-        List<StudentBean> studentList = studentService.getStudentList();
+        List<Student> studentList = studentService.getStudentList();
 
         model.addAttribute("students",studentList);
         return "student_list";
