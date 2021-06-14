@@ -1,9 +1,10 @@
 package ada.wm2.firstsb.entity;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name="STUDENT_LIST")
+@Table(name="STUDENTS")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +16,12 @@ public class Student {
 
     @Column(name="LNAME")
     private String lastName;
+
+    @ManyToMany
+    @JoinTable(name = "ENROLLMENTS",
+            joinColumns = @JoinColumn(name = "ST_ID"),
+            inverseJoinColumns = @JoinColumn(name = "COURSE_ID"))
+    private Set<Course> courses;
 
     public Integer getId() {
         return id;
@@ -38,5 +45,13 @@ public class Student {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Set<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
     }
 }
