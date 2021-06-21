@@ -13,8 +13,12 @@ import java.util.Optional;
 @Service
 public class StudentService {
 
-    @Autowired
     StudentRepository studentRepository;
+
+    @Autowired
+    public void setStudentRepository(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
 
     public List<Student> getAllGirls() {
         List<Student> studentList = (List<Student>) studentRepository.findAllGirls();

@@ -66,6 +66,8 @@ public class StudentController {
     @GetMapping("/{studentId}")
     public String getStudent(Model model, @PathVariable Integer studentId) {
         Student std = studentService.getStudent(studentId);
+        System.out.println("/student/"+studentId+" returned: "+std.getFirstName());
+
         model.addAttribute("student",std);
         return "student_data";
     }

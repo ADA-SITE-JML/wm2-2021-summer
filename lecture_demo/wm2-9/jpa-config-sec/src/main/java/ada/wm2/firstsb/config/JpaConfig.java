@@ -9,6 +9,9 @@ import javax.sql.DataSource;
 @Configuration
 public class JpaConfig {
 
+/*
+Commented for the demo of the property encoding
+
     @Bean
     public DataSource getH2DataSource()
     {
@@ -19,6 +22,6 @@ public class JpaConfig {
                 .password("psw")
                 .build();
     }
-
+ */
 
 }
