@@ -30,7 +30,7 @@ public class IndexController {
     // Will take it out to MvcConfig
     @GetMapping("/login")
     public String showLogin() {
-        return "login";
+        return "login_page";
     }
 
 }

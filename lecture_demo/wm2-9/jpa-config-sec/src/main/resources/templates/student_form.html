@@ -7,11 +7,13 @@
 </head>
 <body>
 <h1>Enter student data and submit</h1>
+
+
 <form action="#" th:action="@{/student/save}" th:object="${student}" method="post">
     <input type="hidden" th:field="*{id}">
     First name: <input type="text" th:field="*{firstName}"><br>
-     Last name: <input type="text" th:field="*{lastName}"><br>
-        School: <input type="text" th:field="*{school}"><br>
+    Last name: <input type="text" th:field="*{lastName}"><br>
+    School: <input type="text" th:field="*{school}"><br>
     <select>
         <option th:each="course : ${student.courses}"
                 th:text="${course.courseName}" th:value="${course.id}">
