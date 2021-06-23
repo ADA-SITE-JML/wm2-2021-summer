@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film data</title>
+</head>
+<body>
+
+<a href="#" th:href="@{/films/edit/{id}(id=${film.film_id})}">Edit film</a>
+<div th:text="${film.title}"></div>
+<div th:if="${film.film_category}">
+    <span th:text="${film.film_category}"></span>
+</div>
+<div th:unless="${film.film_category}">No Categryo given!</div>
+
+<div th:text="${film.release_year}"></div>
+<a href="#" th:href="@{/films/}">Return All films</a>
+
+</body>
+</html>

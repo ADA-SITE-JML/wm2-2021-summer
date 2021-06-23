@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Film List</title>
+</head>
+<body>
+
+<h1>Here all film</h1>
+
+<form action="" th:action="@{/films/}" method="get">
+    <input type="text" name="by_category">
+    <button>Search by Category</button>
+</form>
+
+<form action="" th:action="@{/films/}" method="get">
+    <input type="text" name="by_title">
+    <input type="text" name="by_count">
+    <button>Search by Title</button>
+</form>
+
+<a href="/films/new">Create new Film</a>
+
+<div th:if="${films.empty}">
+    No film added
+</div>
+<div th:each="film : ${films}">
+
+    <a href="#" th:href="@{/films/{id}(id=${film.film_id})}">Show film</a>
+    <div th:text="${film.title}"></div>
+
+</table>
+
+    <br>
+
+</div>
+
+
+</body>
+</html>
