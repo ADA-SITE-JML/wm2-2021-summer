@@ -1,0 +1,87 @@
+.my-container{
+    width: 60%;
+    margin-left: 20%;
+}
+
+.header{
+    width: 100%;
+    background: #f5f5f5;
+    color: #000;
+    font-size: 22px;
+    padding: 20px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.img-div{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.img-div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.header-username {
+    display: inline-flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 15px;
+    margin-top: 2px;
+}
+
+.apost{
+    box-shadow: 0 0 5px 1px rgba(0,0,0,.05);
+    border: 1px solid #dadbdd;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+
+.created_date{
+    color:#555;
+    font-size: 14px;
+}
+
+.body-data{
+    height: 220px;
+    overflow-y: scroll;
+}
+
+.my-textarea{
+    height: 150px !important;
+    resize: none !important;
+}
+
+
+.post-image{
+    width: 100%;
+    height: 200px;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.post-title{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.post-body{
+    padding: 15px 25px;
+}
+
+.post-bio{
+    font-size: 16px;
+}
+
