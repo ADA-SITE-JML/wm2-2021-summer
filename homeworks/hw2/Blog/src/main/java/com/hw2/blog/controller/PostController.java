@@ -82,6 +82,7 @@ public class PostController {
             if (pst.isPresent()){
                 if(permission.hasPermission((Profile) session.getAttribute("current_user"), pst.get().getAuthor())){
                     model.addAttribute("post", pst.get());
+                    model.addAttribute("permission", new Permission(profileService));
                     return "posts/edit_post";
                 }else
                     model.addAttribute("error", "You do not have permission to edit this post");

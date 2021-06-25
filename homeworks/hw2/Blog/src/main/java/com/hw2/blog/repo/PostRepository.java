@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 public interface PostRepository extends CrudRepository<Post, Integer> {
 
@@ -16,6 +15,7 @@ public interface PostRepository extends CrudRepository<Post, Integer> {
 
     @Query(value = "select p.liked_posts from Profile p where p.id=?1")
     Iterable<Post> getLikedPosts(Integer profile_id);
+
 
     @Modifying
     @Transactional

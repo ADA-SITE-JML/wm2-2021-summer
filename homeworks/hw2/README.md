@@ -3,7 +3,7 @@
 
 ### My project has Profile and Post Models. Simple Blog application.
 
-###### How works
+###### How works?
 
 * Needs login in order to see all pages (except, register);
 	* There is no login technology. Just checks, if there is an such user, assign user as a session attribute
@@ -21,7 +21,7 @@
 	* You will see info about profile
 	* You will posts that created by that profile
 * You can edit your profile, by clicking edit Profile link in the profile page
-
+* You can remove your profile
 
 
 ##### Tables
@@ -31,7 +31,7 @@
 
 | ID | Fullname | Username | Password | Image | Bio | Created | Updated |
 |----|----------|----------|----------|-------|-----|---------|---------|
-| PK |          |  unique  |          | link  |     |  now()  |   now() |
+| PK |          |  unique  |          |       |     |  now()  |   now() |
 
 
 

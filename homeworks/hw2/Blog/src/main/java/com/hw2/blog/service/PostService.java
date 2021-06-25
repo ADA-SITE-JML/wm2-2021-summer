@@ -34,6 +34,7 @@ public class PostService {
         return pst;
     }
 
+
     public Optional<Post> getPost(Integer postId) {
         return postRepository.findById(postId);
     }

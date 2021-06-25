@@ -39,4 +39,8 @@ public class Permission {
         return (profile != null);
     }
 
+    public List<Profile> getProfiles(Integer post_id){
+        return profileService.profilesLikedPost(post_id);
+    }
+
 }

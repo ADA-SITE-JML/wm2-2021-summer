@@ -76,6 +76,34 @@
     </div>
 
   </form>
+
+  <h3>Profiles who liked this post</h3>
+
+  <div th:if="${permission.getProfiles(post.id).empty}">
+      No one liked this post!
+  </div>
+
+  <div th:each="profile : ${permission.getProfiles(post.id)}">
+
+    <div class="row mb-3">
+
+      <div class="col-2">
+        <div style="width: 80px;height: 80px;border-radius: 50%">
+          <img th:src="${profile.image}" style="width: 100%;height: 100%;border-radius: 50%" alt="">
+        </div>
+
+      </div>
+      <div class="col-9">
+        <div class="d-flex align-items-center" style="font-size: 20px;font-weight: 550;margin-top: 2px">
+          <a th:href="@{/profile/{profileId}(profileId=${profile.id})}" style="text-decoration: none;color: black" th:text="${profile.fullname}"></a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
 </div>
 
 </body>

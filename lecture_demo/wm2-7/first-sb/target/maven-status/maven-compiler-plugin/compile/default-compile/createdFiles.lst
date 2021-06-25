@@ -1,0 +1,11 @@
+ada/wm2/firstsb/bean/StudentBean.class
+ada/wm2/firstsb/controller/CourseController.class
+ada/wm2/firstsb/entity/Student.class
+ada/wm2/firstsb/FirstSbApplication.class
+ada/wm2/firstsb/repo/CourseRepository.class
+ada/wm2/firstsb/controller/IndexController.class
+ada/wm2/firstsb/service/StudentService.class
+ada/wm2/firstsb/controller/StudentController.class
+ada/wm2/firstsb/service/CourseService.class
+ada/wm2/firstsb/repo/StudentRepository.class
+ada/wm2/firstsb/entity/Course.class
