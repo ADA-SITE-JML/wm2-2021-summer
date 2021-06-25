@@ -4,19 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <title>New Film</title>
-</head>
-<body>
-<h1>Enter film data</h1>
-<form action="#" th:action="@{/films/save}" th:object="${film}" method="post">
-    <input type="hidden" th:field="*{film_id}">
-    TITLE: <input type="text" th:field="*{title}"><br>
-    CATEGORY: <input type="text" th:field="*{film_category}"><br>
-    LANGUAGE: <input type="text" th:field="*{language}"><br>
-    RELEASE_YEAR: <input type="date" placeholder="yyyy-mm-dd" th:field="*{release_year}"><br>
-    DURATION: <input type="text" th:field="*{film_duration}"><br>
 
-    <input type="submit" value="New film">
-</form>
+    <style>
+
+        h2{
+            font-family: "Al Bayan";
+            background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+            height: 45px;
+            margin: 10px 40px;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        td{
+            font-family: "Al Bayan";
+            background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+            height: 15px;
+            margin: 10px 40px;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        input{
+            padding: 20px;
+            font-size: 25px;
+        }
+
+        .button, button{
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 25px;
+            font-size: 15px;
+            margin: 4px 2px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            background-image: linear-gradient(-144deg, #6AEEC6 0%, #698D28 100%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Enter your changes:</h2>
+
+    <br><br>
+
+    <form action="#" th:action="@{/films/save}" th:object="${film}" method="post">
+        <input type="hidden" th:field="*{film_id}">
+
+            <table>
+                <tr>
+                    <td>TITLE: </td>
+                    <td><input required type="text" th:field="*{title}"></td>
+                </tr>
+
+                <tr>
+                    <td>PRODUCER: </td>
+                    <td><input required type="text" th:field="*{producer}"></td>
+                </tr>
+
+                <tr>
+                    <td>CATEGORY: </td>
+                    <td><input required type="text" th:field="*{film_category}"></td>
+                </tr>
+
+                <tr>
+                    <td>LANGUAGE: </td>
+                    <td><input required type="text" th:field="*{language}"></td>
+                </tr>
+
+                <tr>
+                    <td>RELEASE_DATE: </td>
+                    <td><input required type="date" placeholder="yyyy-mm-dd" th:field="*{release_date}"></td>
+                </tr>
+
+                <tr>
+                    <td>DURATION: </td>
+                    <td><input required type="text" th:field="*{film_duration}"></td>
+                </tr>
+
+                <tr>
+                    <td>Actors: </td>
+
+                    <td>
+                        <select name="" th:field="*{actors}" id="" multiple style="width: 100%; font-size: 18px; height: 150px;">
+                    <span th:each="actor : ${actors}" style="font-size: 17px">
+                                <option value="" th:value="${actor.actor_id}" th:text="${actor}"></option>
+
+
+
+                    </span>
+                        </select>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        <br><br>
+
+
+        <button>Confirm changes</button>
+        <a class="button" style="float:right; margin-right: 30px;" href="#" th:href="@{/films/}">Return Back</a>
+
+
+    </form>
 
 
 </body>

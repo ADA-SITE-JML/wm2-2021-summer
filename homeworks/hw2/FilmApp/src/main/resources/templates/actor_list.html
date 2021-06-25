@@ -1,8 +1,9 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
-    <title>Film List</title>
+    <title>Actor List</title>
 
     <style>
         body{
@@ -39,8 +40,8 @@
         }
 
         #button:hover {
-             color: darkorange;
-         }
+            color: darkorange;
+        }
 
         #button1:hover {
             color: darkorange;
@@ -64,40 +65,39 @@
             background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%) !important;
         }
     </style>
-
 </head>
 
 <body>
+    <h2>LIST OF ACTORS:</h2>
 
-    <h2>LIST OF FILMS:</h2>
-
-    <form action="" th:action="@{/films/}" method="get">
-        <p>-List of all films in the <input type="text" name="by_category"> category. </p>
-        <button>Search by Category</button>
+    <form action="" th:action="@{/actors/}" method="get">
+        <p>-List of all actors whose birth place is <input type="text" name="by_birth_place"></p>
+        <button>Search by Birth Place</button>
     </form>
 
     <br>
 
-    <form action="" th:action="@{/films/}" method="get">
-        <p>-List of all films with more than <input type="number" min="0" name="by_count"> actors from the actors' list. </p>
+    <form action="" th:action="@{/actors/}" method="get">
+        <p>-List of all actors who played in more than <input type="number" min="0" name="by_count"> films from the films' list.</p>
         <button>Search by Count</button>
     </form>
 
     <br>
 
-    <a id = "button" href="/films/new">Add a New Film</a>
+    <a id = "button" href="/actors/new">Add a New Actor</a>
 
     <div></div>
     <br>
 
-    <div th:if="${films.empty}">
-        No film entered.
+    <div th:if="${actors.empty}">
+        No actor entered.
     </div>
 
-    <div style="font-size:25px; font-family: Arial;" th:each="film : ${films}">
+    <div style="font-size:25px; font-family: Arial;" th:each="actor : ${actors}">
+        <div th:text="${actor.first_name}"></div>
+        <div th:text="${actor.last_name}"></div>
 
-        <div th:text="${film.title}"></div>
-        <a id="button1" href="#" th:href="@{/films/{id}(id=${film.film_id})}">Click for more info</a>
+        <a id="button1" href="#" th:href="@{/actors/{id}(id=${actor.actor_id})}">Click for more info</a>
 
         <div></div>
         <br>
@@ -108,6 +108,7 @@
         <a class="button extra-css" href="/films/" style="display: block">Films</a>
         <a class = "button extra-css" href="/actors/" style="display: block;margin-top: 20px;width: 100px">Actors</a>
     </div>
+
 
 </body>
 </html>

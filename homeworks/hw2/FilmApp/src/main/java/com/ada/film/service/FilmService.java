@@ -1,6 +1,5 @@
 package com.ada.film.service;
 
-
 import com.ada.film.entity.Film;
 import com.ada.film.repo.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,11 +37,13 @@ public class FilmService {
         return films;
     }
 
-    public List<Film> getFilmsByTitle(String title, Integer count){
-        List<Film> films = (List<Film>) filmRepository.getFilmsByTitleWhichHaveMoreThanXActors(title, count);
+    public List<Film> getFilmsByCount(Integer count){
+        List<Film> films = (List<Film>) filmRepository.getFilmsWhichHaveMoreThanXActors(count);
         return films;
     }
 
-
+    public void deleteFilmbyId(Integer film_id){
+        filmRepository.deleteById(film_id);
+    }
 
 }
