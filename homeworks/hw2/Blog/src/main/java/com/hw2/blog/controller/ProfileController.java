@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import javax.websocket.server.PathParam;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
 
@@ -85,6 +86,17 @@ public class ProfileController {
             return "profile/create_profile";
         }
 
+        return "redirect:/";
+    }
+
+    @DeleteMapping("/delete/{profileId}")
+    public String deleteProfile(HttpSession session, Model model, @PathVariable Integer profileId){
+        Profile profile= profileService.getPostById(profileId);
+        for(Post post: profile.getLiked_posts()){
+            postService.unlikePost(profileId, post.getId());
+        }
+        profileService.deleteProfile(profileId);
+        session.removeAttribute("current_user");
         return "redirect:/";
     }
 

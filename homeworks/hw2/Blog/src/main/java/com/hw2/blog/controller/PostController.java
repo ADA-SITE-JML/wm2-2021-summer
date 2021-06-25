@@ -101,8 +101,13 @@ public class PostController {
                 Optional<Post> pst = postService.getPost(postId);
                 if (pst.isPresent()){
                     if(pst.get().equalsTo(post)){
+                        boolean is_there = profileService.isLiked(profile.getId(), postId);
                         post.setAuthor(profile);
                         postService.savePost(post);
+                        if(is_there){
+                            System.out.println("Da");
+                            postService.likePost(profile.getId(), postId);
+                        }
                         return "redirect:/posts";
                     }
                 }

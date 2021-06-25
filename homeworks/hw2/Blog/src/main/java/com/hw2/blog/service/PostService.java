@@ -21,7 +21,7 @@ public class PostService {
         return blog_list;
     }
 
-    public List<Post> getLikedPosts(long profile_id){
+    public List<Post> getLikedPosts(Integer profile_id){
         return (List<Post>) postRepository.getLikedPosts(profile_id);
     }
 

@@ -4,10 +4,13 @@ import com.sun.istack.NotNull;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.Table;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 
@@ -33,18 +36,18 @@ public class Post {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name="profile_id")
     private Profile author;
-    
+
     // i have added unique constraints, becuase (profile, post) must be unique, one user can like one post only once
     @ManyToMany
-    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinTable(name = "PROFILE_LIKED_POSTS",
                 joinColumns = @JoinColumn(name = "POST_ID"),
                 inverseJoinColumns = @JoinColumn(name = "PROFILE_ID"),
                 uniqueConstraints = {
                     @UniqueConstraint(name = "uniquePostIdProileId",
                     columnNames = {"POST_ID", "PROFILE_ID"})
-                })
-    private Set<Profile> liked_profiles;
+                }
+    )
+    private Set<Profile> liked_profiles = new HashSet<>();
 
 
     public Integer getId() {

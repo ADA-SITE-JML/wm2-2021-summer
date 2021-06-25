@@ -10,7 +10,7 @@ public interface ProfileRepository extends CrudRepository<Profile, Integer> {
 
     Optional<Profile> findByUsernameAndPassword(String username, String password);
 
-    @Query(value = "select * from profiles where id in (select profile_id from profile_liked_posts where post_id = ?);", nativeQuery = true)
+    @Query(value = "select p.liked_profiles from Post p where p.id=?1")
     Iterable<Profile> getProfilesWhoLikedPost(Integer post_id);
 
 

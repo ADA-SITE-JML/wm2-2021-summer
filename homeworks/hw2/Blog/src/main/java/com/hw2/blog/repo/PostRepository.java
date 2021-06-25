@@ -14,13 +14,8 @@ public interface PostRepository extends CrudRepository<Post, Integer> {
     Iterable<Post> getPostByAuthor(Profile author);
 
 
-    @Query(value = "select * from posts where id  in (select post_id from profile_liked_posts where profile_id=?);",
-            nativeQuery = true)
-    Iterable<Post> getLikedPosts(long profile_id);
-
-
-    @Query(value = "select p from Post p where upper(p.title)=upper(?1)")
-    Iterable<Post> searchPosts(String query);
+    @Query(value = "select p.liked_posts from Profile p where p.id=?1")
+    Iterable<Post> getLikedPosts(Integer profile_id);
 
     @Modifying
     @Transactional

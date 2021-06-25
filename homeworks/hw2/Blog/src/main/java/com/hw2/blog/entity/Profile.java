@@ -31,12 +31,10 @@ public class Profile {
     @UpdateTimestamp @Column(name = "updated_at", columnDefinition="timestamp default now()") private Timestamp updated_at;
 
     @OneToMany(mappedBy = "author")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<Post> posts;
+    private Set<Post> posts = new HashSet<>();
 
     @ManyToMany(mappedBy = "liked_profiles")
-    @OnDelete(action = OnDeleteAction.CASCADE)
-    private Set<Post> liked_posts;
+    private Set<Post> liked_posts = new HashSet<>();
 
 
     public Profile(){
