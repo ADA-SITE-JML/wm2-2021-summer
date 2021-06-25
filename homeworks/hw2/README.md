@@ -22,6 +22,7 @@
 	* You will posts that created by that profile
 * You can edit your profile, by clicking edit Profile link in the profile page
 * You can remove your profile
+* You can click profile author in the posts in order to go to the author's profile page
 
 
 ##### Tables
