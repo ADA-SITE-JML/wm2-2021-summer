@@ -51,7 +51,7 @@ public class PlayerService {
         playerRepository.deletePlayerFromTeamById(id);
     }
 
-    public List<Player> getFreePlayers() {
-        return playerRepository.freePlayers();
-    }
+//    public List<Player> getFreePlayers() {
+//        return playerRepository.freePlayers();
+//    }
 }

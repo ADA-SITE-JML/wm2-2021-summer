@@ -6,10 +6,7 @@ import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.model.IModel;
 
 import java.util.List;
@@ -85,4 +82,10 @@ public class PlayerController {
 //        model.addAttribute("players", playerList);
 //        return "team_available_players";
 //    }
+
+    @GetMapping("/search")
+    public String searchPlayersByName(Model model, @RequestParam(name = "name") String playerName) {
+        model.addAttribute("players", playerService.getPlayersByName(playerName));
+        return "players";
+    }
 }

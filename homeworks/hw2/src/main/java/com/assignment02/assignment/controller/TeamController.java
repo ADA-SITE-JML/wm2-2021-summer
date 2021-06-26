@@ -6,10 +6,7 @@ import com.assignment02.assignment.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/team")
@@ -70,5 +67,11 @@ public class TeamController {
         teamService.removePlayer(teamId, playerId);
         model.addAttribute("team", teamService.getTeam(teamId));
         return "team_form";
+    }
+
+    @GetMapping("/search")
+    public String searchTeamByName(Model model, @RequestParam(name = "name") String teamName) {
+        model.addAttribute("teams", teamService.getTeamByName(teamName));
+        return "teams";
     }
 }

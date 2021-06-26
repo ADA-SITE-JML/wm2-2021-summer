@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface TeamRepository extends CrudRepository<Team, Long> {
 
     @Query("select t from Team t where t.name = ?1")
-    Optional<Player> findTeamByName(String name);
+    Optional<Team> findTeamByName(String name);
 
     @Modifying
     @Query(value = "delete from teams_players where team_id = ?1", nativeQuery = true)

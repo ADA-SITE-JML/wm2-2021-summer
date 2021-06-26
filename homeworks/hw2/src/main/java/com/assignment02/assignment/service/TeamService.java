@@ -44,4 +44,9 @@ public class TeamService {
     public void removePlayer(Long teamId, Long playerId) {
         teamRepository.removePlayer(teamId, playerId);
     }
+
+    public Team getTeamByName(String name) {
+        Optional<Team> optionalTeam = teamRepository.findTeamByName(name);
+        return optionalTeam.orElse(new Team("Nothing Found"));
+    }
 }
