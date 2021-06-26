@@ -1,0 +1,38 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome page</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: #f0f0f0;
+        }
+        h1 {
+            font-family: Avenir, Arial;
+        }
+        a {
+            font-size: 24px;
+            font-family: Avenir, Arial;
+            text-decoration: none;
+            color: #3178ff;
+        }
+
+        a:hover {
+            color: darkblue;
+        }
+        a:visited {
+            color: #3178ff;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${message}">Welcome! The website is for managing teams and players</h1>
+<a href="/player/all">Players</a><br>
+<a href="/team/all">Teams</a><br>
+</body>
+</html>
