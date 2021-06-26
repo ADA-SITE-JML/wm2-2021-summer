@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Available Players</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: #f0f0f0;
+        }
+
+        .links {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
@@ -25,7 +38,9 @@
 <!--    </tr>-->
 <!--    </tbody>-->
 <!--</table>-->
+<div class="links">
 <a href="#" th:href="@{/team/all}">Team list</a><br>
 <a href="#" th:href="@{/player/all}">Player list</a>
+</div>
 </body>
 </html>
