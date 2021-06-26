@@ -1,8 +1,9 @@
 package ada.wm2.sbhw.controller;
 
-import ada.wm2.sbhw.bean.EmployeeBean;
+
 import ada.wm2.sbhw.entity.Employee;
-import ada.wm2.sbhw.service.EmployeeService;
+import ada.wm2.sbhw.entity.Task;
+import ada.wm2.sbhw.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,14 +13,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/employee")
-public class EmployeeController {
+@RequestMapping("/task")
+public class TaskController {
     @Autowired
-    EmployeeService employeeService;
+    TaskService taskService;
+
     @GetMapping("/list")
-    public String getEmployeeList(Model model){
-        List<Employee> employeeList= employeeService.getEmployeeList();
-        model.addAttribute("employees", employeeList);
-    return "employee_list";
+    public String getTaskList(Model model) {
+        List<Task> taskList = taskService.getTaskList();
+
+        model.addAttribute("tasks",taskList);
+        return "task_list";
     }
 }

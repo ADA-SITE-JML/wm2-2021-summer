@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Employees</title>
-  </head>
+    <title>Tasks</title>
+
+</head>
 <body>
+
 <style>
 
     h1{
@@ -57,23 +59,22 @@
         margin: 50px;
     }
 </style>
-<h1>Employees</h1>
+<h1>Tasks</h1>
+
 <table>
     <thead>
     <tr>
         <th>Name</th>
-        <th>Position</th>
-        <th>Working Hours</th>
+        <th>Duration</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:if="${employees.empty}">
+    <tr th:if="${tasks.empty}">
         <td> No data found….</td>
     </tr>
-    <tr th:each="employee : ${employees}">
-        <td><span th:text="${employee.name}">Name </span></td>
-        <td><span th:text="${employee.position}">Position </span></td>
-        <td><span th:text="${employee.hours}">Working Hours </span></td>
+    <tr th:each="task : ${tasks}">
+        <td><span th:text="${task.taskName}">Name </span></td>
+        <td><span th:text="${task.duration}">Duration </span></td>
     </tr>
     </tbody>
 
