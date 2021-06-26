@@ -50,8 +50,4 @@ public class PlayerService {
     public void becomeFree(Long id) {
         playerRepository.deletePlayerFromTeamById(id);
     }
-
-//    public List<Player> getFreePlayers() {
-//        return playerRepository.freePlayers();
-//    }
 }

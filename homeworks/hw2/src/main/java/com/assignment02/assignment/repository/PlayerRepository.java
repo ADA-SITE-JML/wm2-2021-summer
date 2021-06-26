@@ -26,7 +26,4 @@ public interface PlayerRepository extends CrudRepository<Player, Long> {
     @Modifying
     @Query(value = "update player set first_name = ?1, last_name = ?2 where player_id = ?3", nativeQuery = true)
     void updatePlayer(String firstName, String lastName, Long id);
-
-    @Query(value = "select * from player where player.player_id not in (select player_id from teams_players);", nativeQuery = true)
-    List<Player> freePlayers();
 }

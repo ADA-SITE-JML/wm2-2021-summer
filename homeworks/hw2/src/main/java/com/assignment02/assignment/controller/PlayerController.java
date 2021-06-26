@@ -75,14 +75,6 @@ public class PlayerController {
         return "players";
     }
 
-//    @GetMapping("/free")
-//    public String getFreePlayers(Model model) {
-//        List<Player> playerList = playerService.getFreePlayers();
-//        System.out.println(playerList);
-//        model.addAttribute("players", playerList);
-//        return "team_available_players";
-//    }
-
     @GetMapping("/search")
     public String searchPlayersByName(Model model, @RequestParam(name = "name") String playerName) {
         model.addAttribute("players", playerService.getPlayersByName(playerName));
