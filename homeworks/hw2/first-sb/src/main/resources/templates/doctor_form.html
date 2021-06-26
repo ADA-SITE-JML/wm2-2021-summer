@@ -1,0 +1,19 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Doctor</title>
+</head>
+<body>
+<h1>Enter doctor data and submit</h1>
+<form action="#" th:action="@{/doctor/save}" th:object="${doctor}" method="post">
+    <input type="hidden" th:field="*{id}">
+    Name: <input type="text" th:field="*{doctorName}"><br>
+<!--    Problem: <input type="text" th:field="*{problem}"><br>-->
+    <input type="submit" value="Save">
+</form>
+
+
+</body>
+</html>

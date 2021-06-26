@@ -1,0 +1,40 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-
+strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Patients</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+
+        <th> Doctors</th>
+        <th> View</th>
+        <th> Edit</th>
+
+
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${doctors.empty}">
+        <td> No data found….</td>
+    </tr>
+    <tr th:each="doctor : ${doctors}">
+        <td><span th:text="${doctor.doctorName}"> Name </span></td>
+
+
+        <!--</td>-->
+        <td><a th:href="@{/doctor/{drId}(drId=${doctor.id})}">View</a></td>
+        <td><a th:href="@{/doctor/edit/{drId}(drId=${doctor.id})}">Edit</a></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
