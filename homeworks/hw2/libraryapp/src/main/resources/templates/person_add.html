@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h3 style="color: blue">Add person </h3>
+    <form action="#" th:action="@{/person/save}" th:object="${person}" method="post">
+
+        <div class="form-group">
+            First name: <input class="form-control" type="text" th:field="*{name}"><br>
+        </div>
+        <div class="form-group">
+            Last name: <input class="form-control" type="text" th:field="*{surname}"><br>
+        </div>
+        <div class="form-group">
+            Age: <input class="form-control" type="text" th:field="*{age}"><br>
+        </div>
+        <div class="form-group">
+            Gender: <input class="form-control" type="text" th:field="*{gender}"><br>
+        </div>
+        <input class="btn btn-success" type="submit" value="Save">
+    </form>
+
+</div>
+</body>
+</html>

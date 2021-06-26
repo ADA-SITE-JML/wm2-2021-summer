@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th> BookName</th>
+            <th> Genres</th>
+            <th> Author</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${books.empty}">
+            <td> No book found….</td>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td><span th:text="${book.name}"> Name </span></td>
+            <td><span th:text="${book.description}"> Description </span></td>
+            <td><span th:text="${book.author}"> Author </span></td>
+            <td><a class="btn btn-danger" th:href="@{/book/{stId}(stId=${book.id})}">Delete Book </a></td>
+            <td><a class="btn btn-warning" th:href="@{/book/edit/{stId}(stId=${book.id})}">Update Book </a></td>
+        </tr>
+        </tbody>
+
+
+    </table>
+
+    <div>
+        <a class="btn btn-primary" th:href="@{/book/addBook}">Add Book</a>
+    </div>
+    <br>
+    <br>
+
+    <div>
+        <a class="btn btn-primary" th:href="@{/}">Welcome Page</a>
+    </div>
+
+</div>
+
+</body>
+</html>

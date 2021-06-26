@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th> Name</th>
+            <th> Surname</th>
+            <th> Age</th>
+            <th> Gender</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${persons.empty}">
+            <td> No person found….</td>
+        </tr>
+        <tr th:each="person : ${persons}">
+            <td><span th:text="${person.name}"> Name </span></td>
+            <td><span th:text="${person.surname}"> Surname </span></td>
+            <td><span th:text="${person.age}"> Age </span></td>
+            <td><span th:text="${person.gender}"> Gender </span></td>
+
+            <td><a class="btn btn-danger" th:href="@{/person/{stId}(stId=${person.id})}">Delete Person </a></td>
+            <td><a class="btn btn-warning" th:href="@{/person/edit/{stId}(stId=${person.id})}">Update Person </a></td>
+            <td><a class="btn btn-primary" th:href="@{/person/books/{stId}(stId=${person.id})}">Add and Remove Book </a>
+            </td>
+        </tr>
+        </tbody>
+
+
+    </table>
+
+    <div class="d-flex mb-3">
+        <div>
+            <a class="btn btn-success" th:href="@{/person/addPerson}">Add Person</a>
+        </div>
+        <div style="padding-left: 35px;">
+            <a class="btn btn-warning" th:href="@{/person/searchPage}"> Go To Search Page</a>
+
+        </div>
+    </div>
+
+    <div>
+        <a class="btn btn-primary" th:href="@{/}">Welcome Page</a>
+    </div>
+
+</div>
+</body>
+</html>

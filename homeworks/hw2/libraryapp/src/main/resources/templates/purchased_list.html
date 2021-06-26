@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+    <h3>Reader: <br>
+        <i style="color: red" th:text="${taker}"></i></h3>
+    <h1>Purchased Books</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th> BookName</th>
+            <th> Description</th>
+            <th> Author</th>
+            <th> Taker</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${books.empty}">
+            <td> No books found….</td>
+        </tr>
+        <tr th:each="book : ${books}">
+            <td><span th:text="${book.name}"> Name </span></td>
+            <td><span th:text="${book.description}"> Description </span></td>
+            <td><span th:text="${book.author}"> Author</span></td>
+            <td><span th:text="${book.person.name}">Taker</span></td>
+            <td><a class="btn btn-danger" th:href="@{/person/book/remove/(stId=${book.person.id},id=${book.id})}">
+                Remove Book </a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h1>Avaliable Books</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th> BookName</th>
+            <th> Description</th>
+            <th> Author</th>
+            <th> Taker</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${bookList.empty}">
+            <td> No books found….</td>
+        </tr>
+        <tr th:each="book : ${bookList}">
+            <td><span th:text="${book.name}"> Name </span></td>
+            <td><span th:text="${book.description}"> Description </span></td>
+            <td><span th:text="${book.author}"> Author</span></td>
+            <td><a class="btn btn-success" th:href="@{/person/book/add/(stId=${userId},id=${book.id})}"> Add Book </a>
+            </td>
+        </tr>
+        </tbody>
+
+    </table>
+
+
+    <div>
+        <a class="btn btn-primary" th:href="@{/}">Welcome Page</a>
+    </div>
+</div>
+</body>
+</html>
