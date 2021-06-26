@@ -1,0 +1,9 @@
+
+INSERT INTO TASKS(T_ID, T_NAME, DURATION) VALUES (1, 'Homepage Design', 15);
+INSERT INTO TASKS(T_ID, T_NAME, DURATION) VALUES (2, 'Social Media Post Design', 6);
+INSERT INTO TASKS(T_ID, T_NAME, DURATION) VALUES (3, 'Contact client', 3);
+INSERT INTO TASKS(T_ID, T_NAME, DURATION) VALUES (4, 'Develop landing page', 35);
+/*
+INSERT INTO EMPLOYEES(EMP_ID, EMP_NAME, POSITION) VALUES ( 1, 'Khanim Huseynzada', 'Graphic Designer', '8:00-12:00' );
+INSERT INTO EMPLOYEES(EMP_ID, EMP_NAME, POSITION) VALUES ( 2, 'Narmina Aghayeva', 'Web Designer', '10:00-19:00' );
+INSERT INTO EMPLOYEES(EMP_ID, EMP_NAME, POSITION) VALUES ( 3, 'Nazrin Ibrahimli', 'IOS Developer' , '10:00-18:00');*/

@@ -11,7 +11,7 @@ public interface StudentRepository extends CrudRepository<Student,Integer> {
 
     Iterable<Student> findByFirstNameOrLastName(String firstName,String lastName);
 
-    @Query("Select s from Student s where s.lastName like '%va'")
+Query("Select s from Student s where s.lastName like '%va'")
     Iterable<Student> findAllGirls();
-
+    @
 }

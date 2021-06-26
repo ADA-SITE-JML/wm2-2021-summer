@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Working Hours</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${employees.empty}">
+        <td> No data found….</td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <td><span th:text="${employee.name}">Name </span></td>
+        <td><span th:text="${employee.position}">Position </span></td>
+        <td><span th:text="${employee.hours}">Working Hours </span></td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+
+</html>
