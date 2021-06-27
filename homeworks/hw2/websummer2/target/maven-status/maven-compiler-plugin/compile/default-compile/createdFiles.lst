@@ -1,0 +1,5 @@
+com\emil\websummer2\BookService.class
+com\emil\websummer2\Book.class
+com\emil\websummer2\BookRepo.class
+com\emil\websummer2\BookCrud.class
+com\emil\websummer2\BookController.class
