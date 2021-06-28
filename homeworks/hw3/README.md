@@ -7,7 +7,7 @@
 * I have specified two data source. You can use one them by making primary. I made H2 DB primary. If you want to use Online postgres DB, make it primary. If you use Online Postgres DB, you need to wait about 3 mins minutes to run application because of connection.
 * If you use H2 Database, data.sql will initialized. Or in online postgres already initialized. So, you can login with admin, admin to spring security and also to profile (username=admin, password=admin);
 * Each user can have multiple profiles.
-* Once you run application, you will able to open only /login or /signup pages. /login post request is deafult request from Spring Security.
+* Once you run application, you will be able to open only /login or /signup pages. /login post request is deafult request from Spring Security.
 * While register, password stored in hashed format.
 * When you switch to the new profile after Spring Security login, you can switch profiles which belong to logged User. As you seen from table, user is foreign key fro profile.
  New user registered in USER mode. You can make them in ADMIN mode only from database.
