@@ -60,7 +60,7 @@
 * Username should be unique
 * Email should be unique
 * Username cannot be same with password
-	* How works? It thorws exception and in controller exception is catched and new Errorfiled added to bindingResult;
+	* How it works? It thorws an exception and in controller, exception is catched and new Errorfiled added to bindingResult;
 
 
 ### Logs
@@ -95,7 +95,7 @@
 
 ### My project has Profile and Post Models. Simple Blog application.
 
-###### How works?
+###### How it works?
 
 * Needs login in order to see all pages (except, register);
 	* There is no login technology. Just checks, if there is an such user, assign user as a session attribute
