@@ -9,9 +9,9 @@
 * Each user can have multiple profiles.
 * Once you run application, you will be able to open only /login or /signup pages. /login post request is deafult request from Spring Security.
 * While register, password stored in hashed format.
-* When you switch to the new profile after Spring Security login, you can switch profiles which belong to logged User. As you seen from table, user is foreign key fro profile.
+* When you switch to the new profile after Spring Security login, you can switch profiles which belong to logged User. As you seen from table, user is foreign key for profile.
  New user registered in USER mode. You can make them in ADMIN mode only from database.
- * After registering or logging to user, you can create new profile which is gonna belong to current user.
+ * After registering or logging to user, you can create new profile which is gonna belong to the current user.
 
 #### Possible logins
 
