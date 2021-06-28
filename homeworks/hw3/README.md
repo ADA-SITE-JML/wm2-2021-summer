@@ -22,7 +22,7 @@
 	* Profile: username=frasulov4671, password=fagan123
 	* Profile: username=jhaciyev, password=fagan123
 
-#### Exceptions
+#### Validations
 
 ##### Profile
 
