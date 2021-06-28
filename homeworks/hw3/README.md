@@ -44,8 +44,9 @@
 |   	   | Size(32,500)|       |
 
 ###### Custom Post exceptions
-* Check permissions on delete and update. Only profile who create that post can update or delete
+* Check permissions on delete and update. Only profile who creates that post can update or delete
 * It throws new PostException if user has no permission. In controller, exception is catched and redirect to /error url. I have used ModelAndView and RedirectAttributes attr for redirecting in order to no to lose Model attr after redirecting.
+* Example: if you create post with id = 3, when you go to /posts/edit/3, you will see edit form. However, if post with id 4 was not created by you, if you go to /posts/edit/4, you will be redirected to /error url with exception message in error page.
 
 
 ##### User
