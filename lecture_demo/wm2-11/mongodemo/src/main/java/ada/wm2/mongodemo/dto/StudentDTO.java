@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentDTO {
-    String studentId;
+    private String studentId;
 
-    String firstName;
+    private String firstName;
 
-    String lastName;
+    private String lastName;
 
-    Double gpa;
+    private Double gpa;
 }
