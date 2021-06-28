@@ -1,9 +1,13 @@
 insert into users(email, enabled,locked,password,user_role, username) values
-('fake@gmail.com', true , false, '$2a$12$sYtBcALafNcIw1O2X7P0Lun0bHvVSCbFxZyYyP/zGLWJg.wy5.yxS','ADMIN', 'admin');
+('admin@gmail.com', true , false, '$2a$12$sYtBcALafNcIw1O2X7P0Lun0bHvVSCbFxZyYyP/zGLWJg.wy5.yxS','ADMIN', 'admin');
+
+
+insert into users(email, enabled,locked,password,user_role, username) values
+('frasulov@gmail.com', true , false, '$2a$12$dXd2DoAqbEhiMuJWGCv2ye5kz2kNDt7z1Y0J3SQHpgLihKnaEuVHm','USER', 'frasulov');
 
 insert into PROFILES(full_name, username, password, image, bio,user_id) values ('Admin user', 'admin', 'admin', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfrLAZZRhW85ny1UWBbuyo4_ATKJgx7dHK6Q&usqp=CAU', 'my bio',1);
-insert into PROFILES(full_name, username, password, image, bio,user_id) values ('Fagan Rasulov', 'frasulov4671', 'fagan123', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOd256TcC6vcaQ99TYzoP0pBbch9_Q-bbrmw&usqp=CAU', 'lorem text',1);
-insert into PROFILES(full_name, username, password, image,user_id) values ('Jamal Haciyev', 'jhaciyev', 'fagan123', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC8kiSH5ZSAcVoj3tAQQDoP_ux0sSricMyUg&usqp=CAU',1);
+insert into PROFILES(full_name, username, password, image, bio,user_id) values ('Fagan Rasulov', 'frasulov4671', 'fagan123', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOd256TcC6vcaQ99TYzoP0pBbch9_Q-bbrmw&usqp=CAU', 'lorem text',2);
+insert into PROFILES(full_name, username, password, image,user_id) values ('Jamal Haciyev', 'jhaciyev', 'fagan123', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC8kiSH5ZSAcVoj3tAQQDoP_ux0sSricMyUg&usqp=CAU',2);
 insert into PROFILES(full_name, username, password, image,user_id) values ('Tehmine Qasimova', 'tqasimova', 'fagan123','https://i.pinimg.com/originals/39/1e/e1/391ee12077ba9cabd10e476d8b8c022b.jpg',1);
 
 insert into POSTS(title,body, profile_id, image) values ('Problems with Managing Your Own Property', 'Another great area of problems to explore in your blogging strategy is the types of problems someone might experience in their role, if that role is someone you typically target as a decision-maker — or, at least an influencer in the decision-making process. It demonstrates you understand their most pressing challenges and concerns in their day-to-day, which is key to winning their trust as a resource. ', 1, 'https://media.istockphoto.com/photos/bloggingblog-concepts-ideas-with-worktable-picture-id922745190?k=6&m=922745190&s=612x612&w=0&h=qBmau_GKQZasMW14NJBp3u2vU-f5YFCcN1N71Exa8iE=');

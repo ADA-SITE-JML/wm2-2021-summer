@@ -13,7 +13,7 @@ public class JPAConfig {
 
     // uncomment @Primary if you wanna use H2 DB;
     @Bean
-//    @Primary
+    @Primary
     public DataSource getH2DataSource(){
         return DataSourceBuilder.create()
                 .driverClassName("org.h2.Driver")
@@ -34,16 +34,5 @@ public class JPAConfig {
                 .build();
     }
 
-    // un comment primary in order to user your local postgres db.
-    @Bean
-    @Primary
-    DataSource getPostgresDataSource(){
-        return DataSourceBuilder.create()
-                .driverClassName("org.postgresql.Driver")
-                .url("jdbc:postgresql://localhost:5432/studentdb")
-                .username("feqanrasulov")
-                .password("F5566041f")
-                .build();
-    }
 
 }

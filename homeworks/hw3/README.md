@@ -4,12 +4,22 @@
 # Added or Updated in Assignment 3
 
 * You can also create your own user in db. However it is recommended to use register for this because of hashed password. I have used BCryptPasswordEncoder with 12 rounds.
-* I have specified three data source. You can use one them by making primary. I made Online Postgres DB primary. If you want to can use, local postgress, or h2db by making them primary. If you use, Online Postgres DB, you need to wait about 3 mins minutes to run application because of connection. However, it is recommended to use it. If you do not use H2-DB. Because you will have data in tables.
+* I have specified two data source. You can use one them by making primary. I made H2 DB primary. If you want to use Online postgres DB, make it primary. If you use Online Postgres DB, you need to wait about 3 mins minutes to run application because of connection.
 * If you use H2 Database, data.sql will initialized. Or in online postgres already initialized. So, you can login with admin, admin to spring security and also to profile (username=admin, password=admin);
 * Each user can have multiple profiles.
 * Once you run application, you will able to open only /login or /signup pages. /login post request is deafult request from Spring Security.
 * While register, password stored in hashed format.
+* When you switch to the new profile after Spring Security login, you can switch profiles which belong to logged User. As you seen from table, user is foreign key fro profile.
+ New user registered in USER mode. You can make them in ADMIN mode only from database.
 
+#### Possible logins
+
+* User:username = admin, password = admin
+	* Profile: username=admin, password=admin
+	* Profile: username=tqasimova, password=fagan123
+* User: username=frasulov, password=frasulov123
+	* Profile: username=frasulov4671, password=fagan123
+	* Profile: username=jhaciyev, password=fagan123
 
 #### Exceptions
 
@@ -34,6 +44,7 @@
 
 ###### Custom Post exceptions
 * Check permissions on delete and update. Only profile who create that post can update or delete
+* It throws new PostException if user has no permission. In controller, exception is catched and redirect to /error url. I have used ModelAndView and RedirectAttributes attr for redirecting in order to no to lose Model attr after redirecting.
 
 
 ##### User
@@ -47,6 +58,7 @@
 * Username should be unique
 * Email should be unique
 * Username cannot be same with password
+	* How works? It thorws exception and in controller exception is catched and new Errorfiled added to bindingResult;
 
 
 ### Logs
@@ -54,6 +66,10 @@
 * Error logs when any exception or error happens
 * Warning logs when permission denied or need login
 * Info lofs when Entity created, updated or deleted
+
+### Permission Class
+
+* Generally, it passed to template and used for permission checking like 'isLiked', 'hasPermission'(for edit delete) and etc.
 
 
 #### Tables
