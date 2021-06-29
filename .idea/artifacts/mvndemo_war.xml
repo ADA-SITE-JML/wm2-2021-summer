@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mvndemo:war">
+    <output-path>$PROJECT_DIR$/lecture_demo/wm2-4/mvndemo/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>mvndemo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="mvndemo.war">
+      <element id="artifact" artifact-name="mvndemo:war exploded" />
+    </root>
+  </artifact>
+</component>

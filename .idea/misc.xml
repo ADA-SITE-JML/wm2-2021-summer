@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/lecture_demo/wm2-4/mvndemo" />
+    <file type="web" url="file://$PROJECT_DIR$/lecture_demo/wm2-5/dbweb" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/lecture_demo/wm2-4/mvndemo/pom.xml" />
+        <option value="$PROJECT_DIR$/lecture_demo/wm2-5/dbweb/pom.xml" />
+        <option value="$PROJECT_DIR$/lecture_demo/wm2-5/db-standalone/pom.xml" />
+        <option value="$PROJECT_DIR$/lecture_demo/wm2-8/jpa-query-demo/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" default="true" project-jdk-name="openjdk-16" project-jdk-type="JavaSDK" />
+</project>
