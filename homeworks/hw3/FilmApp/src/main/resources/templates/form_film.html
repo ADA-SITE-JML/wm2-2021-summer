@@ -1,0 +1,150 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>New Film</title>
+
+    <style>
+
+        h2{
+            font-family: "Al Bayan";
+            background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+            height: 45px;
+            margin: 10px 40px;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        td{
+            font-family: "Al Bayan";
+            background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+            height: 15px;
+            margin: 10px 40px;
+            padding-top: 15px;
+            text-align: center;
+        }
+
+        input{
+            padding: 20px;
+            font-size: 25px;
+        }
+
+        .button, button{
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 25px;
+            font-size: 15px;
+            margin: 4px 2px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            background-image: linear-gradient(-144deg, #6AEEC6 0%, #698D28 100%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Enter your changes:</h2>
+
+    <br><br>
+
+    <form action="#" th:action="@{/films/save}" th:object="${film}" method="post">
+        <input type="hidden" th:field="*{film_id}">
+
+            <table>
+                <tr>
+                    <td>TITLE: </td>
+                    <td><input required type="text" th:field="*{title}"></td>
+                    <div th:if="${#fields.hasErrors('title')}">
+                        <p>Please Correct the Errors Below:</p>
+                        <ul>
+                            <li th:each="err : ${#fields.errors('title')}" th:text="${err}"/>
+                        </ul>
+                    </div>
+                </tr>
+
+                <tr>
+                    <td>PRODUCER: </td>
+                    <td><input required type="text" th:field="*{producer}"></td>
+                    <div th:if="${#fields.hasErrors('producer')}">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('producer')}" th:text="${err}"/>
+                        </ul>
+                    </div>
+                </tr>
+
+                <tr>
+                    <td>CATEGORY: </td>
+                    <td><input required type="text" th:field="*{film_category}"></td>
+                    <div th:if="${#fields.hasErrors('film_category')}">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('film_category')}" th:text="${err}"/>
+                        </ul>
+                    </div>
+                </tr>
+
+                <tr>
+                    <td>LANGUAGE: </td>
+                    <td><input required type="text" th:field="*{language}"></td>
+                    <div th:if="${#fields.hasErrors('language')}">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('language')}" th:text="${err}"/>
+                        </ul>
+                    </div>
+                </tr>
+
+                <tr>
+                    <td>RELEASE_DATE: </td>
+                    <td><input required type="date" placeholder="yyyy-mm-dd" th:field="*{release_date}"></td>
+                    <div th:if="${#fields.hasErrors('release_date')}">
+                        <ul>
+                            <li th:each="err : ${#fields.errors('release_date')}" th:text="${err}"/>
+                        </ul>
+                    </div>
+                </tr>
+
+                <tr>
+                    <td>DURATION: </td>
+                    <td><input required type="text" th:field="*{film_duration}"></td>
+                </tr>
+
+                <tr>
+                    <td>Actors: </td>
+
+                    <td>
+                        <select name="" th:field="*{actors}" id="" multiple style="width: 100%; font-size: 18px; height: 150px;">
+                    <span th:each="actor : ${actors}" style="font-size: 17px">
+                                <option value="" th:value="${actor.actor_id}" th:text="${actor}"></option>
+
+
+
+                    </span>
+                        </select>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        <br><br>
+
+
+        <button>Confirm changes</button>
+        <a class="button" style="float:right; margin-right: 30px;" href="#" th:href="@{/films/}">Return Back</a>
+
+
+    </form>
+
+
+</body>
+</html>

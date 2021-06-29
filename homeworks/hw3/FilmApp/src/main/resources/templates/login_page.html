@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Log In</title>
+
+  <style>
+    body{
+      text-align: center;
+      margin-top: 200px;
+    }
+
+    button{
+      background-image: linear-gradient(-144deg, #6AEEC6 0%, #698D28 100%);
+      border: none;
+      border-radius: 3px;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      margin: 5px 3px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    input{
+      font-size: 25px;
+      padding: 10px 20px;
+      width: 250px;
+    }
+
+    .info{
+      font-family: "Al Bayan";
+      background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%);
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      height: 55px;
+      width: 70 px;
+      margin: 0 px 40px;
+      padding-top: 15px ;
+    }
+
+    #welcome{
+      font-size: 80px;
+      color: yellowgreen;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <p id="welcome">Welcome!</p>
+
+  <form th:action="@{/login}" method="post">
+    <div><label>
+      <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 10px">
+        <span class="info" style="height: auto;padding: 30px 10px;margin-right: 20px;width: 130px;"> Login: </span>
+        <input type="text" name="username"/>
+      </div>
+         </label>
+    </div>
+
+    <div><label>
+      <div style="display: flex; justify-content: center; align-items: center">
+      <div class="info" style="height: auto;padding: 30px 10px;margin-right: 20px;width: 130px;">Password: </div>
+    <input type="password" name="password"/>
+      </div>
+         </label>
+    </div>
+
+    <div th:if="${param.error}">
+      Invalid username and password.
+    </div>
+
+    <div th:if="${param.logout}">
+      You have been logged out.
+    </div>
+
+    <div>
+      <button >Sign In</button >
+    </div>
+
+  </form>
+
+</body>
+</html>
