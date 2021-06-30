@@ -12,8 +12,8 @@
 ###### All of the above mentioned operations can also be performed on the "Actors" page. Additionally, in order to handle my errors, I added an error page. For convenience, I've also added Films, Actors, and Return  Back buttons on the pages to make it easier to navigate from one page to another.
 
 
-#####In addition (for the 3rd Assignment),
-######I used a database based login page and a PasswordEncoder with a strength of 8 for hashing passwords. I have added the following 5 logins manually from which you can login and check my project:
+In addition (for the 3rd Assignment),
+I used a database based login page and a PasswordEncoder with a strength of 8 for hashing passwords. I have added the following 5 logins manually from which you can login and check my project:
 
       (login, password):
 
