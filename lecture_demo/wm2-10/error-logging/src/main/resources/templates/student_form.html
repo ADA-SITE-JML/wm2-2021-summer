@@ -1,0 +1,52 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Student</title>
+</head>
+<body>
+<h1>Enter student data and submit</h1>
+
+
+<form action="#" th:action="@{/student/save}" th:object="${student}" method="post">
+    <div th:if="${#fields.hasErrors('*')}" >
+        <p>Please Correct Errors Below</p>
+    </div>
+
+    <input type="hidden" th:field="*{id}">
+    First name: <input type="text" th:field="*{firstName}"><br>
+    <span th:if="${#fields.hasErrors('firstName')}">
+      <ul>
+        <li th:each="err : ${#fields.errors('firstName')}" 	th:text="${err}"/>
+      </ul>
+    </span>
+    Last name: <input type="text" th:field="*{lastName}"><br>
+    <span th:if="${#fields.hasErrors('lastName')}">
+      <ul>
+        <li th:each="err : ${#fields.errors('lastName')}" 	th:text="${err}"/>
+      </ul>
+    </span>
+    Email: <input type="text" th:field="*{email}"><br>
+    <span th:if="${#fields.hasErrors('email')}">
+      <ul>
+        <li th:each="err : ${#fields.errors('email')}" 	th:text="${err}"/>
+      </ul>
+    </span>
+    School: <input type="text" th:field="*{school}"><br>
+    <span th:if="${#fields.hasErrors('school')}">
+      <ul>
+        <li th:each="err : ${#fields.errors('school')}" 	th:text="${err}"/>
+      </ul>
+    </span>
+    <select>
+        <option th:each="course : ${student.courses}"
+                th:text="${course.courseName}" th:value="${course.id}">
+        </option>
+    </select>
+    <input id="submit" type="submit" value="Save">
+</form>
+
+
+</body>
+</html>

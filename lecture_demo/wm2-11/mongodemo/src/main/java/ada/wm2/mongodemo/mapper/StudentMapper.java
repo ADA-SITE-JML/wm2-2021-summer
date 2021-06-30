@@ -6,10 +6,15 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+import java.util.List;
+
 @Mapper
 public interface StudentMapper {
     StudentMapper INSTANCE = Mappers.getMapper(StudentMapper.class);
 
-    @Mapping(source = "id", target = "studentId")
+    @Mapping(source="stId",target = "studentId")
     StudentDTO studentToDTO(Student student);
+
+    List<StudentDTO> studentListToDTO(List<Student> studentList);
+
 }
