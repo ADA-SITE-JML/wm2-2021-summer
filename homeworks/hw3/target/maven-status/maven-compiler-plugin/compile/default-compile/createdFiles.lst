@@ -1,0 +1,13 @@
+ada\wm2\bookauthor\entity\AuthorEntity.class
+ada\wm2\bookauthor\bean\AuthorBean.class
+ada\wm2\bookauthor\service\BookService.class
+ada\wm2\bookauthor\repo\AuthorRepo.class
+ada\wm2\bookauthor\repo\BookRepo.class
+ada\wm2\bookauthor\service\AuthorService.class
+ada\wm2\bookauthor\entity\BookEntity.class
+ada\wm2\bookauthor\config\MvcConfig.class
+ada\wm2\bookauthor\bean\BookBean.class
+ada\wm2\bookauthor\controller\HomeController.class
+ada\wm2\bookauthor\BookAuthorApplication.class
+ada\wm2\bookauthor\config\CustomErrorController.class
+ada\wm2\bookauthor\config\WebSecurityConfig.class

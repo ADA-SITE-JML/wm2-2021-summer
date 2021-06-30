@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <style>
+        .addForm {
+            display: flex;
+            justify-content: center;
+        }
+
+        .customButton {
+            display: inline-block;
+            float: left;
+            border: 2px outset;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        html {
+            font-family: Helvetica, sans-serif;
+            background-color: #e7d3ba;
+        }
+
+        table {
+            text-align: center;
+
+            border-collapse: collapse;
+            border-radius: 16px;
+            background-color: #e7c79d;
+            margin: auto;
+            border-style: hidden;
+            box-shadow: 0 0 0 3px #000000;
+        }
+
+        td {
+            border: 2px solid black;
+            padding: 8px;
+        }
+
+        th {
+            padding: 6px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th colspan="1000">
+            BOOKS
+        </th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Publication Date</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="book : ${bookList}">
+        <td><span th:text="${book.id}"></span></td>
+        <td><span th:text="${book.name}"></span></td>
+        <td><span th:text="${book.pubDate}"></span></td>
+        <td colspan="1000">
+            <form th:action="@{'/edit-book/' + ${book.id}}" method="GET">
+                <input type="submit" value="✏️" class="customButton"/>
+            </form>
+            <form th:action="@{'/delete-book/' + ${book.id}}" method="POST">
+                <input type="submit" value="❌" class="customButton"/>
+            </form>
+        </td>
+    </tr>
+
+
+    </tbody>
+</table>
+
+<br><br>
+
+<table>
+    <thead>
+    <tr>
+        <th colspan="1000">
+            AUTHORS
+        </th>
+    </tr>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Birth Date</th>
+        <th>Books</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="author : ${authorList}">
+
+        <td>
+            <span th:text="${author.id}"></span>
+        </td>
+
+        <td>
+            <span th:text="${author.name}"></span>
+<!--            <span th:if="${#fields.hasErrors('name')}">-->
+<!--                <ul><li th:each="err : ${#fields.errors('name')}" th:text="${err}"/></ul>-->
+<!--            </span>-->
+        </td>
+
+        <td>
+
+            <span th:text="${author.birthDate}"></span>
+<!--            <span th:if="${#fields.hasErrors('birthDate')}">-->
+<!--                <ul><li th:each="err : ${#fields.errors('birthDate')}" th:text="${err}"/></ul>-->
+<!--            </span>-->
+        </td>
+
+
+        <td>
+            <p th:each="book : ${author.books}" th:text="${book.name}"><br></p>
+        </td>
+
+
+        <td colspan="1000">
+            <form th:action="@{'/edit-author/' + ${author.id}}" method="GET">
+                <input type="submit" value="✏️" class="customButton"/>
+            </form>
+            <form th:action="@{'/delete-author/' + ${author.id}}" method="POST">
+                <input type="submit" value="❌" class="customButton"/>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<br><br>
+
+<div class="addForm">
+    <form th:action="@{'/add-book/'}" method="GET">
+        <input type="submit" value="+ NEW BOOK" class="customButton"/>
+    </form>
+    <form th:action="@{'/add-author/'}" method="GET">
+<!--        <div th:if="${#fields.hasErrors('*')}"><p>Please Correct Errors Below</p></div>-->
+        <input type="submit" value="+ NEW AUTHOR" class="customButton"/>
+    </form>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="LOG OUT" class="customButton"/>
+    </form>
+</div>
+
+</body>
+</html>
