@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Player</title>
+    <style>
+        body {
+            background: #f0f0f0;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+        }
+        a {
+            font-size: 18px;
+            font-family: Avenir, Arial;
+            text-decoration: none;
+            color: #3178ff;
+        }
+
+        a:hover {
+            color: darkblue;
+        }
+        a:visited {
+            color: #3178ff;
+        }
+        p {
+            font-size: 32px;
+            font-family: Avenir, Arial;
+        }
+    </style>
+</head>
+<body>
+<div class="info">
+<p th:text="${'First Name: ' + player.firstName}">First Name</p>
+<p th:text="${'Last Name: ' + player.lastName}">Last Name</p>
+</div>
+<div class="buttons">
+<a th:href="@{/player/edit/{playerId}(playerId=${player.id})}">Edit</a><br>
+<a th:href="@{/player/all}">To player list</a>
+</div>
+</body>
+</html>
