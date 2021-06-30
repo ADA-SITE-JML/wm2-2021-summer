@@ -45,3 +45,6 @@ I used a database based login page and a PasswordEncoder with a strength of 8 fo
 
 ###### IndexController:
 * Info logs while redirecting to other pages
+
+###### ErrorController:
+* Info logs while there is an error 
