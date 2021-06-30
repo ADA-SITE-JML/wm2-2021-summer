@@ -1,0 +1,72 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gamer</title>
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+        #customers tr:hover {background-color: #ddd;}
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+
+    <h1>Add New Gamer</h1>
+    <form action="/gamer/save" method="post">
+        <table >
+            <tr>
+                <td>Name : </td>
+                <td><input path="name" name="name" /></td>
+                <td><input type="submit" value="Save" /></td>
+            </tr>
+        </table>
+    </form>
+
+
+<table id="customers">
+    <thead>
+    <tr>
+        <th> Gamer ID</th>
+        <th> Gamer name</th>
+        <th> Edit </th>
+        <th> Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:if="${gamers.isEmpty()}">
+            <td> No data found….</td>
+        </tr>
+        <tr th:each="gamer : ${gamers}">
+            <td><span th:text="${gamer.id}"> ID </span></td>
+            <td><span th:text="${gamer.name}"> Game Name </span></td>
+            <td><a th:href="'/gamer/edit/' + ${gamer.getId()}">Edit</a> </td>
+            <td><a th:href="'/gamer/delete/' + ${gamer.id}">Sil</a> </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+</body>
+
+</html>

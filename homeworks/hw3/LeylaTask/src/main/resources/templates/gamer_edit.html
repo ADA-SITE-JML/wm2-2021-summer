@@ -1,0 +1,30 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Games</title>
+</head>
+<body>
+
+<h1>Update Game info</h1>
+<form action="/gamer/update" method="post">
+    <table >
+        <tr>
+            <td>Id : </td>
+            <td><input path="id" name="id" th:value="${gamer.getId()}" readonly /></td>
+        </tr>
+        <tr>
+            <td>Name : </td>
+            <td><input path="name" name="name" th:value="${gamer.getName()}" /></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input type="submit" value="Update" /></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+
+</html>
