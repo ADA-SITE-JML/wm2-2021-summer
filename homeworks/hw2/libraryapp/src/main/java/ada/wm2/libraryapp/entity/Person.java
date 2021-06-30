@@ -1,9 +1,6 @@
 package ada.wm2.libraryapp.entity;
 
-import ch.qos.logback.core.boolex.EvaluationException;
-
 import javax.persistence.*;
-import javax.validation.constraints.Min;
 import java.util.List;
 
 @Entity
@@ -13,8 +10,6 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
-
-
 
     @Column(name = "NAME")
     private String name;

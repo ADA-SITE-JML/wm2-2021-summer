@@ -11,8 +11,6 @@ public class Book {
     @Column(name = "ID")
     private Integer id;
 
-
-
     @Column(name = "BOOKNAME")
     private String name;
 
