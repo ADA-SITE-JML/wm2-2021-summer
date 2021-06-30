@@ -39,7 +39,7 @@ I used a database based login page and a PasswordEncoder with a strength of 8 fo
 ###### ActorController, FilmController:
 * Info logs while new actors(films) added or deleted
 * Warn logs while there is an error with input data
-* Error logs while there are some exceptions and errors
+* Error logs while there are some exceptions
 
 ###### IndexController:
 * Info logs while redirecting to other pages
