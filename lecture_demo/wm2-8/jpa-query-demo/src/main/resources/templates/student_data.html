@@ -1,0 +1,24 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Data</title>
+</head>
+<body>
+
+<p th:text="${student.firstName}">Salam</p>
+<p th:text="${student.lastName}">Salamov</p>
+<p th:text="${student.school}">-</p>
+<select>
+    <option th:each="course : ${student.courses}"
+    th:text="${course.courseName}" th:value="${course.id}">
+    </option>
+</select>
+
+<a th:href="@{/student/edit/{stId}(stId=${student.id})}">Edit</a>
+<a th:href="@{/student/list}">Back to list</a>
+
+</body>
+
+</html>
