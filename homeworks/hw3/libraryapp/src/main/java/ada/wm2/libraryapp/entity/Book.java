@@ -1,6 +1,8 @@
 package ada.wm2.libraryapp.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Book {
@@ -11,15 +13,19 @@ public class Book {
     @Column(name = "ID")
     private Integer id;
 
-
-
+    @NotEmpty(message = "Book's name cannot be empty.")
+    @Size(min = 2,message = "Name cannot be less than 2 characters")
     @Column(name = "BOOKNAME")
     private String name;
 
 
+    @NotEmpty(message = "Book's desciption cannot be empty.")
+    @Size(min = 5,message = "Description should not be shorter than 5 characters")
     @Column(name = "GENRES")
     private String description;
 
+    @NotEmpty(message = "Book's author cannot be empty.")
+    @Size(min = 2,message = "Name cannot be less than 2 characters")
     @Column(name = "AUTHOR")
     private String author;
 

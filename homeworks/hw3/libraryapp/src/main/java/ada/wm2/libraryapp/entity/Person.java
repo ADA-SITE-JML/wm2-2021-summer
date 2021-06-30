@@ -1,9 +1,7 @@
 package ada.wm2.libraryapp.entity;
 
-import ch.qos.logback.core.boolex.EvaluationException;
-
 import javax.persistence.*;
-import javax.validation.constraints.Min;
+import javax.validation.constraints.*;
 import java.util.List;
 
 @Entity
@@ -14,14 +12,17 @@ public class Person {
     @Column(name = "ID")
     private Integer id;
 
-
-
+    @Size(min = 2,message = "Name cannot be less than 2 characters")
     @Column(name = "NAME")
     private String name;
 
+    @Size(min = 2,message = "Name cannot be less than 5 characters")
     @Column(name = "SURNAME")
     private String surname;
 
+    @Positive(message = "Age cannot be minus")
+    @Max(value = 200,message = "Age should not be bigger than 200")
+    @NotNull(message = "Person's age cannot be null.")
     @Column(name = "AGE")
     private Short age;
 
@@ -89,4 +90,5 @@ public class Person {
     public void setBooks(List<Book> books) {
         this.books = books;
     }
+
 }
