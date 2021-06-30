@@ -1,5 +1,5 @@
 ##### In my project, I have two entities that are Films-Actors and have a many-to-many relationship. 
-##### In one of the main pages, called "Films", you can:
+###### In one of the main pages, called "Films", you can:
 
 * find list of all the movies added to the database
 * search for films by their categories (added by a non-native query) 
