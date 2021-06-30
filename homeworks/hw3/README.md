@@ -29,7 +29,7 @@ I used a database based login page and a PasswordEncoder with a strength of 8 fo
 
 ###### I also performed some validation on the entered data:
 
-* In terms of film data, I have a @Size validation for the entered film title, producer, category and language. The length of all the entered values should be between the given min and max attributes.
+* In terms of film data, I have a @Size validation for the entered film title, producer, category and language. It means that the length of all entered values to these fields should be between the given min and max attributes.
 
 * As for the actor data, I have @NotBlank and @Size validations for the entered first name, last name and birth place. If these fields are empty, a message will appear. In addition, the length of all entered values must be between the given min and max attributes.
 
