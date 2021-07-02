@@ -1,0 +1,35 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th> First name</th>
+        <th> Last name</th>
+        <th> School</th>
+        <th> Courses</th>
+        <th> View</th>
+        <th> Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${students.empty}">
+        <td> No data found….</td>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td><span th:text="${student.firstName}"> Name </span></td>
+        <td><span th:text="${student.lastName}"> Surname </span></td>
+        <td><span th:text="${student.school}"> School </span></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+
+</html>
