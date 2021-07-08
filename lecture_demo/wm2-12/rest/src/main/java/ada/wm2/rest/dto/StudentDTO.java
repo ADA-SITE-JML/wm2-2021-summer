@@ -1,4 +1,4 @@
-package ada.wm2.mongodemo.dto;
+package ada.wm2.rest.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StudentDTO {
-    private String studentId;
+    private Integer studentId;
 
     private String firstName;
 
