@@ -20,10 +20,4 @@ public interface ActorRepository extends CrudRepository<Actor, Integer> {
     Iterable<Actor> getActorsOfFilm(Integer film_id);
 
 
-
-    
-
-
-
-
 }
