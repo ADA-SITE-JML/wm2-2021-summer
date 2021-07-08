@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>400 Error Page</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+
+<style>
+  .my-container{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+  }
+
+
+</style>
+
+<div class="my-container">
+  <div class="row">
+    <div class="col-2">
+      <a href="/posts/" class="btn btn-primary">All Posts</a>
+    </div>
+    <div class="col-2">
+      <a href="/posts/liked" class="btn btn-primary">Like Posts</a>
+    </div>
+    <div class="col-2">
+      <a href="/" class="btn btn-warning">Switch User</a>
+    </div>
+    <div class="col-2">
+      <a href="/profile" class="btn btn-warning">My Profile</a>
+    </div>
+    <div class="col-2">
+      <a href="/logout" class="btn btn-warning">Logout</a>
+    </div>
+  </div>
+  <h2 class="text-center mt-4">:( 400 Bad Request Error happens</h2>
+  <h2 class="text-center mt-4">
+    Please check your code.
+  </h2>
+</div>
+
+
+</body>
+</html>

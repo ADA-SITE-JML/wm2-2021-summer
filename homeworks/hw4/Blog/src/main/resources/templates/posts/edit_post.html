@@ -1,0 +1,134 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Post</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<style>
+
+  .my-container{
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .img-div img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .my-textarea{
+    height: 150px !important;
+    resize: none !important;
+  }
+
+  .error-text{
+    color: red;
+  }
+  .error-ul{
+    padding: 0;
+    padding-left: 17px;
+    margin-top: 5px;
+  }
+</style>
+<body>
+
+
+
+<div class="my-container">
+  <div class="row">
+    <div class="col-2">
+      <a href="/posts/" class="btn btn-primary">All Posts</a>
+    </div>
+    <div class="col-2">
+      <a href="/posts/liked" class="btn btn-primary">Like Posts</a>
+    </div>
+    <div class="col-2">
+      <a href="/" class="btn btn-warning">Switch User</a>
+    </div>
+    <div class="col-2">
+      <a href="/logout" class="btn btn-warning">Logout</a>
+    </div>
+  </div>
+  <h1 class="text-center mt-3 mb-3">Edit Post</h1>
+
+  <form class="mb-5" action="#" th:action="@{/posts/edit/{postId}(postId=${post.id})}" th:object="${post}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="post_title" class="form-label">Post Title</label>
+          <input type="text" class="form-control" id="post_title" th:field="*{title}" placeholder="Title">
+          <div th:if="${#fields.hasErrors('title')}">
+            <ul class="error-ul">
+              <li class="error-text" th:each="err : ${#fields.errors('title')}" th:text="${err}"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="post_image" class="form-label">Post Image Link</label>
+          <input type="text" class="form-control" id="post_image" th:field="*{image}" placeholder="Image link">
+          <div th:if="${#fields.hasErrors('image')}">
+            <ul class="error-ul">
+              <li class="error-text" th:each="err : ${#fields.errors('image')}" th:text="${err}"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-floating">
+        <textarea class="form-control my-textarea" th:field="*{body}" placeholder="Leave a post body here" id="floatingTextarea2" style="height: 100px"></textarea>
+        <label for="floatingTextarea2" style="left: 15px">Post Body</label>
+        <div th:if="${#fields.hasErrors('body')}">
+          <ul class="error-ul">
+            <li class="error-text" th:each="err : ${#fields.errors('body')}" th:text="${err}"></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-6">
+          <input type="submit" class="btn btn-primary" style="margin-top: 48px;" value="Update Post">
+        </div>
+      </div>
+
+
+    </div>
+
+  </form>
+
+  <h3>Profiles who liked this post</h3>
+
+  <div th:if="${permission.getProfiles(post.id).empty}">
+      No one liked this post!
+  </div>
+
+  <div th:each="profile : ${permission.getProfiles(post.id)}">
+
+    <div class="row mb-3">
+
+      <div class="col-2">
+        <div style="width: 80px;height: 80px;border-radius: 50%">
+          <img th:src="${profile.image}" style="width: 100%;height: 100%;border-radius: 50%" alt="">
+        </div>
+
+      </div>
+      <div class="col-9">
+        <div class="d-flex align-items-center" style="font-size: 20px;font-weight: 550;margin-top: 2px">
+          <a th:href="@{/profile/{profileId}(profileId=${profile.id})}" style="text-decoration: none;color: black" th:text="${profile.fullname}"></a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+
+</body>
+</html>
