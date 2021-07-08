@@ -1,4 +1,4 @@
-FILMS-ACTORS
+FILMS & ACTORS
 
 ##### In my project, I have two entities that are Films-Actors and have a many-to-many relationship. 
 ###### In one of the main pages, called "Films", you can:
@@ -6,7 +6,7 @@ FILMS-ACTORS
 * find list of all the movies added to the database
 * search for films by their categories (added by a non-native query) 
 * search for films with more actors than the number you specified in the field (added by a native query)
-* add new movies by clicking the “Add “a New Film” button and entering their information
+* add new movies by clicking the “Add a New Film” button and entering their information
 * read detailed information about the films by clicking the "Click for More Info" button
 * From there, edit and delete existing movie information
 * add and remove actors from the listed films (you can add  several actors for one film)
@@ -45,3 +45,6 @@ I used a database based login page and a PasswordEncoder with a strength of 8 fo
 
 ###### IndexController:
 * Info logs while redirecting to other pages
+
+###### ErrorController:
+* Info logs while there is an error 
