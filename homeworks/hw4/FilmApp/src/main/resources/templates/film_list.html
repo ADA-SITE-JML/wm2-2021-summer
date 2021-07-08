@@ -1,0 +1,113 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Film List</title>
+
+    <style>
+        body{
+            text-align: center;
+        }
+
+        p{
+            font-size: 25px;
+        }
+        .button, #button{
+            background-image: linear-gradient(-144deg, #6AEEC6 0%, #698D28 100%);
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 20px;
+            font-size: 18px;
+            margin: 5px 3px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #button1{
+            background-image: linear-gradient(-144deg, #6AEEC6 0%, #698D28 100%);
+            border: none;
+            border-radius: 3px;
+            color: white;
+            padding: 6px;
+            font-size: 15px;
+            margin: 4px 3px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #button:hover {
+             color: darkorange;
+         }
+
+        #button1:hover {
+            color: darkorange;
+        }
+
+        h2{
+            font-family: "Al Bayan";
+            background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+            height: 45px;
+            margin: 0px 40px;
+            padding-top: 15px ;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10px;
+        }
+
+        .extra-css{
+            background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%) !important;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>LIST OF FILMS:</h2>
+
+    <form action="" th:action="@{/films/}" method="get">
+        <p>-List of all films in the <input type="text" name="by_category"> category. </p>
+        <button>Search by Category</button>
+    </form>
+
+    <br>
+
+    <form action="" th:action="@{/films/}" method="get">
+        <p>-List of all films with more than <input type="number" min="0" name="by_count"> actors from the actors' list. </p>
+        <button>Search by Count</button>
+    </form>
+
+    <br>
+
+    <a id = "button" href="/films/new">Add a New Film</a>
+
+    <div></div>
+    <br>
+
+    <div th:if="${films.empty}">
+        No film entered.
+    </div>
+
+    <div style="font-size:25px; font-family: Arial;" th:each="film : ${films}">
+
+        <div th:text="${film.title}"></div>
+        <a id="button1" href="#" th:href="@{/films/{id}(id=${film.film_id})}">Click for more info</a>
+
+        <div></div>
+        <br>
+
+    </div>
+
+    <div style="position: absolute; top:100px; left: 60px">
+        <a class="button extra-css" href="/films/" style="display: block">Films</a>
+        <a class = "button extra-css" href="/actors/" style="display: block;margin-top: 20px;width: 100px">Actors</a>
+    </div>
+
+</body>
+</html>

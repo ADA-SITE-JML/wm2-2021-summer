@@ -1,0 +1,53 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Page</title>
+
+    <style>
+      body{
+        text-align: center;
+        color: yellowgreen;
+      }
+
+      .button{
+        background-image: linear-gradient(-144deg, #6AEEC6 0%, #698D28 100%);
+        border: none;
+        border-radius: 3px;
+        color: white;
+        padding: 20px;
+        font-size: 18px;
+        margin: 5px 3px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .extra-css{
+        background-image: linear-gradient(-144deg, darkorange 0%, yellowgreen 100%) !important;
+      }
+
+      .error{
+        font-size: 30px;
+      }
+    </style>
+</head>
+
+<body>
+  <p style="margin-top: 13%; font-size: 60px;">Sorry, but something happened...</p>
+
+  <p class="error">The problem: </p>
+
+  <p class="error" th:text="${error}"></p>
+  <br>
+  <br>
+  <br>
+
+  <div>
+    <a class="button extra-css" href="/films/">Films</a>
+    <a class = "button extra-css" href="/actors/">Actors</a>
+  </div>
+
+
+</body>
+</html>
