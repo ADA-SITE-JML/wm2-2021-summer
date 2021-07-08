@@ -7,11 +7,11 @@
 * I have specified two data source. You can use one them by making primary. I made H2 DB primary. If you want to use Online postgres DB, make it primary. If you use Online Postgres DB, you need to wait about 3 mins minutes to run application because of connection.
 * If you use H2 Database, data.sql will initialized. Or in online postgres already initialized. So, you can login with admin, admin to spring security and also to profile (username=admin, password=admin);
 * Each user can have multiple profiles.
-* Once you run application, you will able to open only /login or /signup pages. /login post request is deafult request from Spring Security.
+* Once you run application, you will be able to open only /login or /signup pages. /login post request is deafult request from Spring Security.
 * While register, password stored in hashed format.
-* When you switch to the new profile after Spring Security login, you can switch profiles which belong to logged User. As you seen from table, user is foreign key fro profile.
+* When you switch to the new profile after Spring Security login, you can switch profiles which belong to logged User. As you seen from table, user is foreign key for profile.
  New user registered in USER mode. You can make them in ADMIN mode only from database.
- * After registering or logging to user, you can create new profile which is gonna belong to current user.
+ * After registering or logging to user, you can create new profile which is gonna belong to the current user.
 
 #### Possible logins
 
@@ -22,7 +22,7 @@
 	* Profile: username=frasulov4671, password=fagan123
 	* Profile: username=jhaciyev, password=fagan123
 
-#### Exceptions
+#### Validations
 
 ##### Profile
 
@@ -44,8 +44,9 @@
 |   	   | Size(32,500)|       |
 
 ###### Custom Post exceptions
-* Check permissions on delete and update. Only profile who create that post can update or delete
+* Check permissions on delete and update. Only profile who creates that post can update or delete
 * It throws new PostException if user has no permission. In controller, exception is catched and redirect to /error url. I have used ModelAndView and RedirectAttributes attr for redirecting in order to no to lose Model attr after redirecting.
+* Example: if you create post with id = 3, when you go to /posts/edit/3, you will see edit form. However, if post with id 4 was not created by you, if you go to /posts/edit/4, you will be redirected to /error url with exception message in error page.
 
 
 ##### User
@@ -59,7 +60,7 @@
 * Username should be unique
 * Email should be unique
 * Username cannot be same with password
-	* How works? It thorws exception and in controller exception is catched and new Errorfiled added to bindingResult;
+	* How it works? It thorws an exception and in controller, exception is catched and new Errorfiled added to bindingResult;
 
 
 ### Logs
@@ -94,7 +95,7 @@
 
 ### My project has Profile and Post Models. Simple Blog application.
 
-###### How works?
+###### How it works?
 
 * Needs login in order to see all pages (except, register);
 	* There is no login technology. Just checks, if there is an such user, assign user as a session attribute
