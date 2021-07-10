@@ -1,0 +1,42 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Data</title>
+    <style>
+        p{
+            font-size: 32px;
+            padding: 5px;
+
+        }
+
+        a{
+            color:#6868d9;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<p th:text="${doctor.firstName}">-</p>
+<p th:text="${doctor.lastName}">-</p>
+<p th:text="${doctor.shift}">-</p>
+
+<!--<select>-->
+<!--    <option th:each="doctor : ${patient.doctor}"-->
+<!--            th:text="${doctor.doctorName}" th:value="${doctor.id}">-->
+<!--    </option>-->
+<!--</select>-->
+
+
+
+
+<a th:href="@{/doctor/edit/{drId}(drId=${doctor.id})}">Edit</a>
+<a th:href="@{/doctor/list}">Back to list</a>
+
+</body>
+
+</html>
