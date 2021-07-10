@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <form action="/person/likeName" method="get">
+        <div class="form-group">
+            Enter the Name : <input class="form-control" type="text" name="name">
+            <input class="btn btn-primary" type="submit" value="Search">
+        </div>
+    </form>
+
+    <form action="/person/greater" method="get">
+        <div class="form-group">
+            Enter age : <input class="form-control" type="number" name="age">
+            <input class="btn btn-primary" type="submit" value="Search">
+        </div>
+    </form>
+
+    <form action="/person/gender/surname" method="get">
+        <div class="form-group">
+            Enter Gender : <input class="form-control" type="text" name="gender"> &nbsp;&nbsp; and
+            Surname : <input class="form-control" type="text" name="surname">
+            <input class="btn btn-primary" type="submit" value="Search">
+        </div>
+    </form>
+
+</div>
+</body>
+</html>
