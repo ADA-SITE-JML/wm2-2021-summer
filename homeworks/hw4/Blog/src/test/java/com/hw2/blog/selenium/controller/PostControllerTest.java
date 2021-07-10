@@ -1,6 +1,5 @@
 package com.hw2.blog.selenium.controller;
 
-import com.google.j2objc.annotations.Property;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -9,16 +8,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
-
-import javax.lang.model.element.Element;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
+
+// you will able to run only once.
+// Because it creates post with 7 then try to delete it.
+// When you rerun test, it creates new post which id gonna be 8, but try to delete 7 which does not exist
 public class PostControllerTest {
 
     static private WebDriver driver;
@@ -87,13 +83,14 @@ public class PostControllerTest {
     @Test
     @DisplayName("Edit Post")
     public void editPost(){
-        String post_id = "8"; //
+        String post_id = "7"; //
 
         String edit_url = "http://localhost:8080/posts/edit/"+post_id;
 
         // go to edit page
         driver.get(edit_url);
-
+        System.out.println(edit_url);
+        System.out.println(driver.getCurrentUrl());
         assertThat(edit_url).isEqualTo(driver.getCurrentUrl());
 
         String post_title = "Updated Automated Post";

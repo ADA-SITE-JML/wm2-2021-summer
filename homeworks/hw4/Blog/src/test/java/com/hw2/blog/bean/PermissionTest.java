@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PermissionTest {
 
     Permission permission;
-    HttpSession session;
+    MockHttpSession session;
     Profile profile;
 
     @BeforeEach

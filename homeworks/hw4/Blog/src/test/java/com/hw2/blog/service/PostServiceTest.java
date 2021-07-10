@@ -11,14 +11,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -58,6 +56,18 @@ public class PostServiceTest {
     }
 
     @Test
+    @DisplayName("Expect to get 3 posts for given author")
+    void testGetPostByAuthor(){
+        given(postRepository.getPostByAuthor(author)).willReturn(posts.stream().filter((post) -> post.getAuthor().equalsTo(author)).collect(Collectors.toList()));
+
+        List<Post> author_posts = postService.getPostByAuthor(author);
+
+        then(postRepository).should().getPostByAuthor(any(Profile.class));
+        assertThat(author_posts).hasSize(3);
+
+    }
+
+    @Test
     @DisplayName("Expect to get 5 posts from result")
     void testGetAllPosts(){
         given(postRepository.findAll()).willReturn(posts);
@@ -71,13 +81,13 @@ public class PostServiceTest {
 
 
     @Test
-    @DisplayName("Expect to get 2 liked post")
+    @DisplayName("Expect to get liked post")
     void testGetLikedPosts(){
-        given(postRepository.getLikedPosts(1)).willReturn(liked_posts);
+        given(postRepository.getLikedPosts(anyInt())).willReturn(liked_posts);
 
-        List<Post> allLikedPosts = postService.getLikedPosts(1);
+        List<Post> allLikedPosts = postService.getLikedPosts(anyInt());
 
-        then(postRepository).should().getLikedPosts(1);
+        then(postRepository).should().getLikedPosts(anyInt());
         assertThat(allLikedPosts).isEqualTo(liked_posts);
 
     }
@@ -86,11 +96,11 @@ public class PostServiceTest {
     @DisplayName("Expect to get 1 post with permission")
     void testGetPost() throws PostException {
         Post post = new Post(1, author);
-        given(postRepository.findById(anyInt())).willReturn(Optional.of(post));
+        given(postRepository.findById(1)).willReturn(Optional.of(post));
 
-        Post found = postService.getPost(anyInt(),author);
+        Post found = postService.getPost(1,author);
 
-        then(postRepository).should().findById(anyInt());
+        then(postRepository).should().findById(1);
         assertThat(found).isNotNull().isInstanceOf(Post.class).isEqualTo(post);
 
     }
