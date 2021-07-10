@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class HelperTest {
 
     @Test
-    @DisplayName("TestDateFormat")
+    @DisplayName("TestStringFormat")
     void changeString() throws Exception {
         String name = "El2vina Isma4yilov0a1";
         String expected_name = "Elvina Ismayilova";
