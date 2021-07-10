@@ -2,7 +2,10 @@
 
 #### What i have tested
 
-I have created ChangeDateFormat helper method inside of Permission class. Which cast Timestamp to String in given format.
+
+##### For selenium testing, please change driver location to yours. I have set driver location to my local.
+
+##### I have created ChangeDateFormat helper method inside of Permission class. Which cast Timestamp to String in given format.
 
 * Permission class methods
 	* hasPermission
@@ -31,3 +34,5 @@ I have created ChangeDateFormat helper method inside of Permission class. Which 
 	* Edit Post which is not allowed
 	* Delete Post
 	* AfterAll (logout and close the driver)
+
+
