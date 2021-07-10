@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Author</title>
+    <style>
+        html {
+            font-family: Helvetica, sans-serif;
+            background-color: #e7d3ba;
+        }
+    </style>
+</head>
+
+<form th:action="@{'/save-edited-author/' + ${author.id}}" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:value="${author?.name}">
+    <br>
+    <label for="birthDate">Birth Date:</label>
+    <input type="text" id="birthDate" name="birthDate" th:value="${author?.birthDate}">
+    <br>
+
+<!--    <label for="selection">Books:</label>-->
+<!--    <select id="selection">-->
+<!--        <option th:each="book : ${author.books}"-->
+<!--                th:text="${book.name}" th:value="${book.id}">-->
+<!--        </option>-->
+<!--    </select>-->
+
+    <div th:each="book : ${allBooks}">
+        <input type="checkbox" th:id="${book.id}" name="selection" th:value="${book.name}" th:checked="${author.hasBookWithID(book.id)}">
+        <label th:for="${book.id}"><span th:text="${book.name}"></span></label>
+        <br><br>
+    </div>
+
+    <input type="submit" value="Save">
+</form>
+
+
+
+<body>
+
+</body>
+</html>

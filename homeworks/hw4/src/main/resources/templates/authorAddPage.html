@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Author</title>
+    <style>
+        html {
+            font-family: Helvetica, sans-serif;
+            background-color: #e7d3ba;
+        }
+    </style>
+</head>
+
+<form th:action="@{'/add-author/'}" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <label for="birthDate">Birth Date:</label>
+    <input type="text" id="birthDate" name="birthDate">
+    <br>
+    <input type="submit" value="Save">
+</form>
+
+<body>
+
+</body>
+</html>

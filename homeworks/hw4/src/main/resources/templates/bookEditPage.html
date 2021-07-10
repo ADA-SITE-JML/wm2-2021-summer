@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book</title>
+    <style>
+        html {
+            font-family: Helvetica, sans-serif;
+            background-color: #e7d3ba;
+        }
+    </style>
+</head>
+
+<form th:action="@{'/save-edited-book/' + ${book.id}}" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" th:value="${book?.name}">
+    <br>
+    <label for="pubDate">Publication Date:</label>
+    <input type="text" id="pubDate" name="pubDate" th:value="${book?.pubDate}">
+    <br>
+    <input type="submit" value="Save">
+</form>
+
+<body>
+
+</body>
+</html>
