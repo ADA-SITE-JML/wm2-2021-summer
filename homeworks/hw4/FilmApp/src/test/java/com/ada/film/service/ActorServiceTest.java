@@ -69,13 +69,13 @@ public class ActorServiceTest {
     @Test
     void testSaveActor() throws Exception {
 
-        Actor a = new Actor();
+        Actor a = new Actor(1, "ELvina", "Ismayilova", "Baku, Aze");
 
         given(actorRepository.save(a)).willReturn(a);
 
         Actor saved = actorService.saveActor(a);
 
-        then(actorRepository).should().save(any(Actor.class));
+        then(actorRepository).should().save(a);
         assertThat(saved).isNotNull();
 
 

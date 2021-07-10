@@ -66,7 +66,7 @@
         <table>
             <tr>
                 <td>FIRST_NAME: </td>
-                <td><input type="text" th:field="*{first_name}"></td>
+                <td><input type="text" id="first_name" th:field="*{first_name}"></td>
                 <div th:if="${#fields.hasErrors('first_name')}">
                 <ul>
                 <li th:each="err : ${#fields.errors('first_name')}" th:text="${err}"/>
@@ -76,7 +76,7 @@
 
             <tr>
                 <td>LAST_NAME: </td>
-                <td><input type="text" th:field="*{last_name}"></td>
+                <td><input type="text" id="last_name" th:field="*{last_name}"></td>
                 <div th:if="${#fields.hasErrors('last_name')}">
                     <ul>
                         <li th:each="err : ${#fields.errors('last_name')}" th:text="${err}"/>
@@ -86,7 +86,7 @@
 
             <tr>
                 <td>BIRTH_PLACE: </td>
-                <td><input type="text" th:field="*{birth_place}"></td>
+                <td><input type="text" id="birth_place" th:field="*{birth_place}"></td>
                 <div th:if="${#fields.hasErrors('birth_place')}">
                     <ul>
                         <li th:each="err : ${#fields.errors('birth_place')}" th:text="${err}"/>
@@ -96,7 +96,7 @@
 
             <tr>
                 <td>BIRTH_DATE: </td>
-                <td><input required type="date" placeholder="yyyy-mm-dd" th:field="*{birth_date}"></td>
+                <td><input required type="date" id="birth_date" placeholder="yyyy-mm-dd" th:field="*{birth_date}"></td>
             </tr>
 
         </table>

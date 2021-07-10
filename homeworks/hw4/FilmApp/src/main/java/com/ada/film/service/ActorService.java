@@ -1,7 +1,7 @@
 package com.ada.film.service;
 
 import com.ada.film.entity.Actor;
-import com.ada.film.helper.DateConverter;
+import com.ada.film.helper.HelperClass;
 import com.ada.film.repo.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +30,8 @@ public class ActorService {
 
     public Actor saveActor(Actor a) throws Exception {
         Actor result_actor = null;
+        a.setFirst_name(HelperClass.changeString(a.getFirst_name()));
+        a.setLast_name(HelperClass.changeString(a.getLast_name()));
         result_actor = actorRepository.save(a);
         return result_actor;
     }

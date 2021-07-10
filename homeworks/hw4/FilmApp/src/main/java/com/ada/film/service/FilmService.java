@@ -1,6 +1,7 @@
 package com.ada.film.service;
 
 import com.ada.film.entity.Film;
+import com.ada.film.helper.HelperClass;
 import com.ada.film.repo.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,7 @@ public class FilmService {
 
     public Film saveFilm(Film f) throws Exception{
         Film result_film = filmRepository.save(f);
+        f.setProducer(HelperClass.changeString(f.getProducer()));
         return result_film;
     }
 

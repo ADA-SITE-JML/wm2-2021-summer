@@ -10,19 +10,19 @@ public class HelperTest {
 
     @Test
     @DisplayName("TestDateFormat")
-    void DateFormat() throws Exception {
-        String date = "10.07.2021";
-        String expected_date = "2021-07-10";
+    void changeString() throws Exception {
+        String name = "El2vina Isma4yilov0a1";
+        String expected_name = "Elvina Ismayilova";
 
-        String result = DateConverter.DateFormat(date);
-        assertEquals(expected_date,result);
+        String result = HelperClass.changeString(name);
+        assertEquals(expected_name,result);
     }
 
     @Test
-    void DateFormatTestException() {
-        String date = "wrondinput";
+    void changeStringTestException() {
+        String name = "";
 
-        assertThrows(Exception.class, () -> DateConverter.DateFormat(date));
+        assertThrows(Exception.class, () -> HelperClass.changeString(name));
     }
 
 }

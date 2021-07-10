@@ -38,10 +38,20 @@ public class ActorControllerTest {
     void testShowEditForm() throws Exception {
             mockMvc.perform(get("/actors/edit/1"))
                     .andExpect(status().isOk())
-            //        .andExpect(model().attributeExists("actor"))
                     .andExpect(view().name("form_actor"));
     }
 
-//    @Test
-//    void
+
+    @Test
+    void testactorsView() throws Exception {
+        mockMvc.perform(get("/actors/"))
+                .andExpect(status().isOk())
+                .andExpect(model().attributeExists("actors"))
+                .andExpect(view().name("actor_list"));
+    }
+
+
+
+
+
 }

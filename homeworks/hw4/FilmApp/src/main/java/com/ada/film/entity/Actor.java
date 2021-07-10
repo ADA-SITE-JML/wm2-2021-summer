@@ -37,7 +37,7 @@ public class Actor {
     @Size(min = 3, max = 20, message = "Please enter a \"BIRTH PLACE\" with the length between 3 and 20!")
     private String birth_place;
 
-    @Column(name = "BIRTH_DATE", columnDefinition = "date check(BIRTH_DATE<=now())")
+    @Column(name = "BIRTH_DATE", columnDefinition = "date")
     private Date birth_date;
 
     @ManyToMany(mappedBy = "actors")
@@ -84,6 +84,19 @@ public class Actor {
         this.birth_date = birth_date;
     }
 
+    public Actor(int actor_id, String first_name, String last_name, String birth_place) {
+        this.actor_id = actor_id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.birth_place = birth_place;
+    }
+
+    public Actor(){
+
+    }
 
     public String toString() { return this.first_name + " " + this.last_name; }
+
+
+
 }
