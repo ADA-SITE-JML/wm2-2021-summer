@@ -31,7 +31,7 @@ public class ActorServiceTest {
 
 
     @Test
-    @DisplayName("Test get all actors")
+    @DisplayName("Expect getting 3 actors.")
     void getAllActors(){
         Actor a = new Actor();
         Actor a1 = new Actor();
@@ -52,6 +52,7 @@ public class ActorServiceTest {
     }
 
 
+    @DisplayName("Find the required actor.")
     @Test
     void testGetActor(){
         Actor a = new Actor();
@@ -66,10 +67,11 @@ public class ActorServiceTest {
 
     }
 
+    @DisplayName("Expect getting the saved actor.")
     @Test
     void testSaveActor() throws Exception {
 
-        Actor a = new Actor(1, "ELvina", "Ismayilova", "Baku, Aze");
+        Actor a = new Actor(1, "Elvina", "Ismayilova", "Azerbaijan");
 
         given(actorRepository.save(a)).willReturn(a);
 

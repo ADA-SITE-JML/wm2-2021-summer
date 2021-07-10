@@ -29,8 +29,8 @@ public class FilmService {
     }
 
     public Film saveFilm(Film f) throws Exception{
-        Film result_film = filmRepository.save(f);
         f.setProducer(HelperClass.changeString(f.getProducer()));
+        Film result_film = filmRepository.save(f);
         return result_film;
     }
 
