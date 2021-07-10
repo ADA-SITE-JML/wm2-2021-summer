@@ -8,6 +8,9 @@ import org.springframework.mock.web.MockHttpSession;
 
 import javax.servlet.http.HttpSession;
 
+import java.sql.Timestamp;
+import java.util.Calendar;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PermissionTest {
@@ -37,6 +40,17 @@ public class PermissionTest {
     void testIsLoggedIn(){
         Profile p = (Profile) session.getAttribute("current_user");
         assertNotEquals(null, p);
+    }
+
+    @Test
+    @DisplayName("Test Converting Date")
+    void testChangeDateFormat(){
+        Timestamp given = new Timestamp(1625905254498L); // 2021-07-10 12:20:54
+        String expected = "July 10, 2021 12:20:54";
+        String result = permission.changeDateFormat(given);
+        System.out.println(result);
+        assertEquals(expected, result);
+
     }
 
 }

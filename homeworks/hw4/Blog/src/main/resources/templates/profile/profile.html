@@ -226,7 +226,7 @@
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center" style="height: 40px">
-                                <div class="created_date" th:text="${post.updated_at}"></div>
+                                <div class="created_date" th:text="${permission.changeDateFormat(post.updated_at)}"></div>
                                 <div th:if="${permission.hasPermission(session.current_user, post.author)}" class="d-flex justify-content-end">
                                     <a class="btn btn-primary" href="" th:href="@{/posts/edit/{postId}(postId=${post.id})}">Edit</a>
 

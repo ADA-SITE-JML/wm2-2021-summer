@@ -2,9 +2,12 @@
 
 #### What i have tested
 
+I have created ChangeDateFormat helper method inside of Permission class. Which cast Timestamp to String in given format.
+
 * Permission class methods
 	* hasPermission
 	* isLoggedIn
+	* ChangeDateFormat
 * Post Service methods
 	* getAllPosts
 	* getLikedPosts
